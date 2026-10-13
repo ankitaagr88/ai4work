@@ -1,14 +1,13 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ai4work Homepage</title>
+<meta name="description" content="ai4work builds simple process automation for Indian businesses: leads, quotes, orders, documents, tasks, payments and a client portal, all on your team&#x27;s phones.">
+<link rel="icon" href="assets/ai4work-logo.png">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,201 +15,518 @@
     html { scroll-behavior: smooth; }
     body { margin: 0; background: #FFFFFF; font-family: 'Inter', sans-serif; }
     a { color: #588C00; text-decoration: none; }
-    a:hover { color: #1E2615; }
-    .chip { display:inline-block; font-family:'Inter',sans-serif; font-size:11.5px; font-weight:600; color:#588C00; background:#EAF3DC; border-radius:999px; padding:4px 12px; margin:0 6px 6px 0; }
-    .card { background:#F4F4F2; border:1px solid #E2E4DD; border-radius:18px; padding:26px 28px; }
-    @media (max-width: 720px) {
+    a:hover { color: #3f6b00; }
+    .navlink { font-family:'Inter',sans-serif; font-weight:600; font-size:13.5px; color:#3A3D36; }
+    .navlink:hover { color:#141414; }
+    .btn-primary { font-family:'Inter',sans-serif; font-weight:700; font-size:14px; color:#FFFFFF; background:#588C00; border-radius:10px; padding:14px 26px; display:inline-block; }
+    .btn-primary:hover { background:#3f6b00; color:#FFFFFF; }
+    .btn-outline { font-family:'Inter',sans-serif; font-weight:700; font-size:14px; color:#141414; border:1.5px solid #D8D5CB; border-radius:10px; padding:14px 26px; display:inline-block; }
+    .btn-outline:hover { border-color:#588C00; color:#588C00; }
+    .card { background:#FFFFFF; border:1px solid #E7E4DB; border-radius:16px; }
+    .icon-badge { width:46px; height:46px; border-radius:12px; display:flex; align-items:center; justify-content:center; flex-shrink:0; box-shadow:0 6px 14px rgba(20,20,20,0.14); }
+    .eyebrow { font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#588C00; font-weight:700; display:inline-flex; align-items:center; gap:8px; }
+    .eyebrow::before { content:""; width:7px; height:7px; border-radius:50%; background:#588C00; display:inline-block; }
+    .dots-bg { background-image: radial-gradient(circle, #D8ECC0 1.6px, transparent 1.6px); background-size: 22px 22px; }
+    @media (max-width: 920px) {
       .grid2 { grid-template-columns: 1fr !important; }
       .grid3 { grid-template-columns: 1fr !important; }
+      .grid4 { grid-template-columns: 1fr 1fr !important; }
+      .hero-wrap { grid-template-columns: 1fr !important; }
     }
+
+    html { -webkit-text-size-adjust:100%; text-size-adjust:100%; overflow-x:hidden; }
+    body { overflow-x:clip; max-width:100%; }
+    img, svg, video { max-width:100%; }
+    .mn-cb { position:absolute; opacity:0; pointer-events:none; }
+    .mn-btn { display:none; width:44px; height:44px; align-items:center; justify-content:center; border:1px solid #E3E0D6; border-radius:10px; cursor:pointer; background:#FFFFFF; flex-shrink:0; }
+    .navbar { position:relative; }
+    .wc { display:flex !important; flex-direction:column; align-items:stretch; text-decoration:none; }
+    .wc .icon-badge { width:46px; height:46px; border-radius:12px; flex:none; }
+    .wc:hover { transform:translateY(-2px); }
+    @media (max-width: 1000px) { .wwd { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+    @media (max-width: 640px) { .wwd { grid-template-columns:minmax(0,1fr) !important; gap:10px !important; } .wc { padding:14px !important; } .wc > div[style*="font-size:13px"] { font-size:14.5px !important; } }
+    @media (max-width: 640px) {
+      body { padding-bottom:84px; font-size:16px; }
+      section:not(.hero-sec) [style*="font-size:10.5px"], section:not(.hero-sec) [style*="font-size:11px"], section:not(.hero-sec) [style*="font-size:11.5px"], section:not(.hero-sec) [style*="font-size:12px"], section:not(.hero-sec) [style*="font-size:12.5px"], .post-card [style*="font-size:11px"], .post-card [style*="font-size:12.5px"], .sidebar-col [style*="font-size:10.5px"], .sidebar-col [style*="font-size:12.5px"] { font-size:13px !important; }
+      section:not(.hero-sec) [style*="font-size:13px"], section:not(.hero-sec) [style*="font-size:13.5px"], section:not(.hero-sec) [style*="font-size:14px"] { font-size:15px !important; }
+      section:not(.hero-sec) p { font-size:16px !important; line-height:1.65 !important; }
+      .btn-primary, .btn-outline { padding:15px 22px !important; font-size:15px !important; }
+      a[href^="tel:"], a[href^="mailto:"], a[href*="linkedin"], a[href$="Contact"] { display:inline-block; padding:8px 0; }
+      a[href*="Try the demo"], a[href$=".html"][style*="margin-top:14px"] { padding:12px 0 !important; font-size:15px !important; }
+      .sidebar-col > div[onclick], .sidebar-col > div[onClick] { padding:14px 14px !important; }
+    }
+    @media (max-width: 920px) {
+      .mn-btn { display:flex; }
+      .navlinks { display:none !important; position:absolute; top:100%; left:0; right:0; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:14px; box-shadow:0 18px 40px rgba(20,20,20,0.12); padding:10px 18px 18px; flex-direction:column; align-items:stretch !important; gap:0 !important; z-index:20; }
+      .mn-cb:checked ~ .navlinks { display:flex !important; }
+      .navlinks a.navlink, .navlinks a.navlink2 { padding:14px 4px; border-bottom:1px solid #F0EEE6; font-size:15px !important; }
+      .navlinks a.btn-primary { margin-top:14px; text-align:center; padding:14px 20px !important; font-size:14px !important; }
+      .wrap { padding-left:18px !important; padding-right:18px !important; }
+      .hero-sec { padding:32px 20px !important; border-radius:22px !important; margin:18px 0 36px 0 !important; }
+      .hero-sec h1 { font-size:34px !important; letter-spacing:-1px !important; }
+      .hero-wrap > div { min-width:0; }
+      .hero-vis { width:100% !important; height:calc(440px * var(--s,0.8)) !important; overflow:hidden; position:relative; }
+      .hero-vis > div { position:absolute; left:50%; top:0; width:560px; height:440px; margin:0 0 0 -280px !important; transform:scale(var(--s,0.8)); transform-origin:top center; }
+      h2 { font-size:28px !important; line-height:1.2 !important; }
+      section { scroll-margin-top:80px; }
+      .steps-wrap { height:auto !important; }
+      .steps-line { display:none; }
+      .grid2 > *, .grid3 > *, .grid4 > *, .hero-wrap > * { min-width:0; }
+      section div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; }
+      .card { min-width:0; }
+      section[style*="padding"] { padding-left:20px !important; padding-right:20px !important; }
+    }
+    @media (max-width: 560px) { .hero-vis { --s:0.54; } .grid4 { grid-template-columns:1fr 1fr !important; row-gap:24px !important; } h2 { font-size:25px !important; } }
+    @media (max-width: 440px) { section div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns:minmax(0,1fr) !important; } .grid4 { grid-template-columns:1fr 1fr !important; } }
+    @media (max-width: 380px) { .hero-vis { --s:0.46; } .hero-sec h1 { font-size:30px !important; } }
   </style>
-</helmet>
 
-<div style="max-width:1080px; margin:0 auto; padding:0 32px;">
+</head>
+<body>
 
-  <!-- ============ NAV ============ -->
-  <div style="display:flex; align-items:center; justify-content:space-between; padding:26px 0;">
-    <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:22px; letter-spacing:-0.4px;">
-      <span style="color:#1E2615;">ai</span><span style="color:#588C00;">4</span><span style="color:#8B8F86;">work</span>
-    </div>
-  </div>
 
-  <!-- ============ HERO ============ -->
-  <section style="padding:48px 0 44px 0;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#588C00; font-weight:700; margin-bottom:16px;">Business Consultant — Organization &amp; Process</div>
-    <h1 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:46px; color:#1E2615; margin:0 0 20px 0; letter-spacing:-0.8px; line-height:1.15; max-width:760px;">Your team is still doing by hand what software could do for them.</h1>
-    <p style="font-family:'Inter',sans-serif; font-size:17px; color:#3A3D36; line-height:1.7; margin:0 0 28px 0; max-width:600px;">If your team is spending hours on work that feels like it should be faster — data entry, document sorting, stock tracking, customer updates — I build the tool that handles it. Inside Google Sheets, WhatsApp, or your existing system. No new software, no training, no dependency on me once it's done.</p>
-    <div style="display:flex; gap:12px; flex-wrap:wrap;">
-      <a href="#work" style="font-family:'Inter',sans-serif; font-weight:600; font-size:14px; color:#F4F4F2; background:#1E2615; border-radius:999px; padding:12px 24px;">See recent work</a>
-      <a href="#contact" style="font-family:'Inter',sans-serif; font-weight:600; font-size:14px; color:#1E2615; border:1.5px solid #1E2615; border-radius:999px; padding:12px 24px;">Get in touch</a>
-    </div>
-  </section>
+<div class="wrap" style="max-width:1180px; margin:0 auto; padding:0 32px;">
 
-  <!-- ============ WHO THIS IS FOR ============ -->
-  <section style="background:#1E2615; border-radius:16px; padding:26px 30px; margin-bottom:52px; break-inside:avoid;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#A2D159; font-weight:700; margin-bottom:12px;">Who this is for</div>
-    <div class="grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:10px 24px;">
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ SME owner with manual, repetitive work</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Business that tried software and it didn't fit</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ CA or CS firm with investor compliance workflows</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Textile or saree trader tracking manually</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Any retailer recording product/warranty details by hand</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Service business running on WhatsApp with no task structure</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Professional services firm coordinating work through email and Excel</p>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#F4F4F2; line-height:1.65; margin:0;">→ Business owner who's been told "you need a developer"</p>
-    </div>
-  </section>
-
-  <!-- ============ IN HER OWN WORDS ============ -->
-  <section class="card" style="padding:34px 38px; margin-bottom:52px;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#588C00; font-weight:700; margin-bottom:16px;">In my own words</div>
-    <p style="font-family:'Poppins',sans-serif; font-weight:500; font-size:19px; color:#1E2615; line-height:1.6; margin:0 0 16px 0;">If your business has a process that feels like it should be easier, I'd love to talk.</p>
-    <p style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:#588C00; margin:0;">— Ankitaa, problem solver</p>
-  </section>
-
-  <!-- ============ WHAT I DO ============ -->
-  <section style="padding:8px 0 44px 0;">
-    <div class="grid3" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
-      <div class="card">
-        <div style="color:#588C00; font-weight:700; font-family:'Poppins',sans-serif; font-size:16px; margin-bottom:8px;">Document &amp; data processing</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">Classify, extract and structure high-volume records automatically.</div>
-      </div>
-      <div class="card">
-        <div style="color:#588C00; font-weight:700; font-family:'Poppins',sans-serif; font-size:16px; margin-bottom:8px;">Custom internal tools</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">Built fast with AI-augmented development, fit to how your team already works.</div>
-      </div>
-      <div class="card">
-        <div style="color:#588C00; font-weight:700; font-family:'Poppins',sans-serif; font-size:16px; margin-bottom:8px;">No dependency, no new software</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">You own the system completely once it's set up.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WHATSAPP INTEGRATIONS ============ -->
-  <section style="background:#1E2615; border-radius:22px; padding:42px 40px; margin-bottom:52px;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#A2D159; font-weight:700; margin-bottom:12px;">A running theme in the work</div>
-    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#F4F4F2; margin:0 0 14px 0; letter-spacing:-0.4px;">WhatsApp as the front door</h2>
-    <p style="font-family:'Inter',sans-serif; font-size:15px; color:#C7CCC0; line-height:1.7; margin:0 0 28px 0; max-width:640px;">Most people I build for already live in WhatsApp all day — so instead of asking anyone to learn a new app, the automation meets them there. No login, no button-hunting, no new habit to build.</p>
-    <div class="grid2" style="display:grid; grid-template-columns:1fr 1fr; gap:18px;">
-      <div style="background:#28311F; border-radius:14px; padding:20px 22px;">
-        <div style="color:#A2D159; font-weight:600; font-family:'Poppins',sans-serif; font-size:14.5px; margin-bottom:6px;">Requests become tracked tasks</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#C7CCC0; line-height:1.6;">A client's WhatsApp message becomes a task automatically, routed to the right person — and they're notified the moment it's done.</div>
-      </div>
-      <div style="background:#28311F; border-radius:14px; padding:20px 22px;">
-        <div style="color:#A2D159; font-weight:600; font-family:'Poppins',sans-serif; font-size:14.5px; margin-bottom:6px;">Confirmations &amp; reminders</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#C7CCC0; line-height:1.6;">Booking confirmations, renewal reminders and crew call-time notices go out automatically — no one has to remember to send them.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ USE CASES ============ -->
-  <section id="work" style="padding-bottom:16px;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#588C00; font-weight:700; margin-bottom:10px;">Where this fits</div>
-    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#1E2615; margin:0 0 10px 0; letter-spacing:-0.4px;">Use cases I design for</h2>
-    <p style="font-family:'Inter',sans-serif; font-size:14px; color:#6C6F69; line-height:1.6; margin:0 0 30px 0; max-width:640px;">Patterns from recent scoping conversations — the kind of manual workflow this approach is built to replace.</p>
-  </section>
-
-  <div style="display:flex; flex-direction:column; gap:18px; margin-bottom:52px;">
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Task management in spreadsheets</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For service businesses coordinating requests over chat: a client's WhatsApp message becomes a task in a live sheet automatically, routed to the right person, tracked through to done — and the client gets notified the moment it's complete. No new software to learn, no dashboard to log into.</p>
-      <div><span class="chip">Google Sheets</span><span class="chip">WhatsApp intake</span><span class="chip">Auto status updates</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Membership &amp; approvals workflows</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For organisations juggling double data entry across a signup form and a system of record: applications get parsed straight from the source, routed to the right group, approved with a simple WhatsApp reply, and entered automatically — across as many chapters or branches as needed.</p>
-      <div><span class="chip">Form parsing</span><span class="chip">WhatsApp approvals</span><span class="chip">Multi-branch routing</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Marketplace &amp; e-commerce operations</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For sellers managing requests across Amazon, Flipkart, Meesho and more: a client's WhatsApp message becomes a tracked task, auto-assigned to the right person (or their backup), with a second-person check on anything money-related, and an automatic confirmation once it's done.</p>
-      <div><span class="chip">WhatsApp intake</span><span class="chip">Auto-assignment</span><span class="chip">Marketplace ops</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Multi-firm order &amp; accounting sync</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For businesses running several firms out of one accounting system: clients browse only the products relevant to them, negotiate price over web or WhatsApp, and once an order is accepted it lands back in the books as a voucher automatically — no re-typing across separate company files.</p>
-      <div><span class="chip">Tally sync</span><span class="chip">WhatsApp ordering</span><span class="chip">Web PWA</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Warranty &amp; serviceable-asset tracking</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For dealers and service networks: staff scan a serial and snap a photo on their phone; warranty end dates and claim history stay tracked automatically, with hard duplicate-blocking so the same unit can never be entered twice. Scales from a lean spreadsheet version up to a full custom app.</p>
-      <div><span class="chip">Serial scanning</span><span class="chip">Google Sheets</span><span class="chip">Offline-safe capture</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Studio &amp; production operations</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For event-based service businesses juggling crew, schedules and deliverables: one place to run orders, crew scheduling, payments and deliverables — with client and crew WhatsApp threads linked directly to each job, so nothing gets coordinated over scattered chats.</p>
-      <div><span class="chip">Crew scheduling</span><span class="chip">Payment tracking</span><span class="chip">WhatsApp threads</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Booking &amp; scheduling</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For venues and academies taking bookings by phone or in person: customers book time slots themselves, with live dynamic pricing, automatic WhatsApp confirmations, invoice generation, and renewal reminders for recurring fees — no separate admin panel needed.</p>
-      <div><span class="chip">Self-serve booking</span><span class="chip">Dynamic pricing</span><span class="chip">WhatsApp reminders</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Financial document &amp; compliance automation</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For finance and accounting teams repeating the same steps for every client, every cycle: bulk document generation, automated downloads from government/compliance portals, and sorting or cleaning up large batches of records — each turned into a one-click tool, cutting hours of copy-paste down to minutes.</p>
-      <div><span class="chip">Document generation</span><span class="chip">Portal automation</span><span class="chip">Data cleanup</span></div>
-    </div>
-
-    <div class="card">
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#1E2615; margin-bottom:10px;">Inventory &amp; QR tracking</div>
-      <p style="font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.65; margin:0 0 12px 0;">For manufacturers and retailers tracking stock by design or batch: every item gets its own QR code — scan it in on production, scan it out on an order, and a printable order form generates automatically from what was scanned, billed under the correct firm, with live stock visibility.</p>
-      <div><span class="chip">QR tracking</span><span class="chip">Multi-firm billing</span><span class="chip">Auto order forms</span></div>
-    </div>
-
-  </div>
-
-  <!-- ============ HOW I WORK ============ -->
-  <section style="padding-bottom:52px;">
-    <div style="font-family:'Inter',sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:1.5px; color:#588C00; font-weight:700; margin-bottom:10px;">How I work</div>
-    <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#1E2615; margin:0 0 26px 0; letter-spacing:-0.4px;">Same shape, every time</h2>
-    <div class="grid3" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
-      <div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#A2D159; margin-bottom:8px;">01</div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:#1E2615; margin-bottom:6px;">Find the manual step</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">Spot the real bottleneck in a messy process before building anything.</div>
-      </div>
-      <div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#A2D159; margin-bottom:8px;">02</div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:#1E2615; margin-bottom:6px;">Connect what you already use</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">Sheets, Tally, WhatsApp — upgrade the ecosystem in place instead of replacing it.</div>
-      </div>
-      <div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:22px; color:#A2D159; margin-bottom:8px;">03</div>
-        <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15px; color:#1E2615; margin-bottom:6px;">Ship a working tool fast</div>
-        <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6;">Days, not months — then you own it outright, no ongoing dependency.</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ CONTACT ============ -->
-  <section id="contact" style="background:#F4F4F2; border:1px solid #E2E4DD; border-radius:22px; padding:40px; margin-bottom:60px;">
-    <div style="display:flex; align-items:center; justify-content:space-between; gap:32px; flex-wrap:wrap;">
-      <div>
-        <p style="font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; color:#1E2615; margin:0 0 20px 0; line-height:1.4;">→ If something in your business still runs on manual effort, let's talk.</p>
-        <div style="display:flex; gap:40px; flex-wrap:wrap; font-family:'Inter',sans-serif; font-size:14px;">
-          <div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Phone</span><br><a href="https://wa.me/918126271222" style="color:#1E2615;">+91 81262 71222</a></div>
-          <div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Email</span><br><a href="mailto:ankitaa@ai4work.in" style="color:#1E2615;">ankitaa@ai4work.in</a></div>
-          <div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Web</span><br><a href="https://www.linkedin.com/in/ankitaa-s-goyal" style="color:#1E2615;">linkedin.com/in/ankitaa-s-goyal</a></div>
-        </div>
-      </div>
-      <div style="text-align:center; flex-shrink:0;">
-        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkgAAAJICAIAAAAVfIz4AAATlElEQVR4nO3dQY7kSA4EwK1F/2L+/7R5h/Yw144BCASXDG+zYyFLipSUcsTBwZ/v+/4DACn+O70AALhJsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQRbABEOVX9R/++uuvjnVc9/fff//276+s/5bTdTg5XZ/qcarHP6nex+7P39J9PW/d95Nb6z/pfk66Wc9d1efNjg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKD/f95X+obvnVDW1nlv9j209qu5+2En39Zw679T36vbK/erucXY//1Pvsdff53ZsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQpz2Orer3Hs2392+aTdfd7uvtAU/2zW8ef6lFNfa+Tbf3FW+d9pWdW1b1+OzYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAorT32LbZNvfolm19spPX51fd6m9Vj3OrR9ht6j52X//u896yrfc2xY4NgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCh/XI/tZGo+2ckrfaBuqeuZ6l119+dOpn4vU/er+/h/Wi+tyo4NgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCjtPbZX+hbd85mm5pltm1t26zjdc7Oquu9v932cmn926/PV40z9Trf1X6teeZ/bsQEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQ5VqPbdvcrG6v9N5umfq+r3z+5Nb93fZ9PQ93P39L6lzGKjs2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKL8fN83vYb/q1f6GVM9tm29uqn5c1NzsLrXv+26TZnqmXXb1n+dYscGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJRyj6275zQ132hbT+hWj6q7jzV1/U9e7yF187zNnrfq9d9F93v1xI4NgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCi/qv/Q3V/ZNi9qqld38vq8pW19xJNX7uPU8/x6n3Vq7mD3+m+dd9t7tcqODYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAo5R5b1bb+RPU4t3oV1eNs69NUe4cnr8yxq5rqF049JydT1/+W7v7irfdMdx/09bmGdmwARBFsAEQRbABEEWwARBFsAEQRbABEEWwARPn5vq/0D1M9pO6+1JTUuV/d9/dk2/PzyvM/1Rfc1peaeo9NPScnU8c/qZ7Xjg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKOV5bK/Pf6oe5/X+zcnrPZiq7t5M9fjbrk+3qd/X1O93W19t2/vq5Nbzb8cGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJRyj+2kuycx1ed4vX/T/fmpnlD389Ddezt5/XmbOk7qc7jtvpxs68nZsQEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQ5ef7vtI/vDIfqLtXNGVqztO2nk33/KqTbf22Ka/MjZvq+W173l55P5jHBgC/IdgAiCLYAIgi2ACIItgAiCLYAIgi2ACIUu6x8Y9X+nxVU3PFqsc56Z6DVdXdo7p13j/t+1bPu63Xte3zt9w6rx0bAFEEGwBRBBsAUQQbAFEEGwBRBBsAUQQbAFF+dZ8gtYd0aw5ZVfd5p3p13b23qedhqvdzsq231P08vz4vsLrOqffVrefHPDYA+A3BBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJRrPbZt/aHu41R191S6z/tKz2aqNzPV16wev/t+Vddz6/Mnr8xNfKUvW/381Hw+OzYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAopR7bFN9ternb61naq7SVM+mu893MjUHrmpbv2rb3K9bun8v1fO+8rvu7gtum7t2YscGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJSf7/tK/9Ddl9o2b+xkap23vNKTe6XPdOs42/p83X2jbddnqhdYXU/V6+uvsmMDIIpgAyCKYAMgimADIIpgAyCKYAMgimADIMq1HttU36Wqu6eyrQ/Xvf6Tbc/JVF9n2/29ZVt/dOo4VdveYyfbrk/1vHZsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAET51X2CV/phVbfW3/29uvtP23o/rzxXt67/VL+t+/e1bZ3dv4up53Dbfbz1PrFjAyCKYAMgimADIIpgAyCKYAMgimADIIpgAyBKe4/tZKpXNNX/6O4/bbNtXlfVVJ9sam7cydTcvilTfbWp+7utH3yLHRsAUQQbAFEEGwBRBBsAUQQbAFEEGwBRBBsAUco9tu5+0uvzt6bW83o/6ZU+zSs9y1u6e1e3zvvKnLxb5329H3ly671kxwZAFMEGQBTBBkAUwQZAFMEGQBTBBkAUwQZAlJ/v+0r/MNVX6zY1P+yW7r7LLdv6cyfb7uMtr1zn1+/jybZe7MlUD/hEjw2AP5pgAyCKYAMgimADIIpgAyCKYAMgimADIMq1eWwn23o5r/fwXpnvNbXO7vvVvc7Xn7dX5rd1q76Xbn1+qs+6re9rxwZAFMEGQBTBBkAUwQZAFMEGQBTBBkAUwQZAlHKP7eT1/sRUz6m7v3LrvK/Mkeo2tc5X+qPbequ3jv/KvMOTV963t66PHRsAUQQbAFEEGwBRBBsAUQQbAFEEGwBRBBsAUX6+7yv9Q3efY6pvccutdb7Sd3l9/duO80r/7JXf45Tu6/xKn+xEjw0ACgQbAFEEGwBRBBsAUQQbAFEEGwBRBBsAUcrz2G7ND7vlVj9mW6/oZFvP7JWezba5fbdsu4/V459M/a5fmQt48vr6b7FjAyCKYAMgimADIIpgAyCKYAMgimADIIpgAyBK+zy2W1LnWt3ySl+n+z5OXYdt/baTqb7a1H2/ZWpe3bb5f6/05OzYAIgi2ACIItgAiCLYAIgi2ACIItgAiCLYAIjSPo+te37Ytn7bK7b1w1J7h6/0O29dn9evZ9VU/7Lq1n3fNg/yxI4NgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCjleWxV2/pSJ6/MUes+/rbr+fp6Xun9nEyt/5XrlvreuGXqftmxARBFsAEQRbABEEWwARBFsAEQRbABEEWwARClvcd2sq1vUdU9h+mk+/jV81r/LHMK/zE1F23q+d92v6b6uCd2bABEEWwARBFsAEQRbABEEWwARBFsAEQRbABE+XXrQNv6Iie3+j1Tx5maT9Y912pbH6i6nqn70v35qu5e3dRcupNtfbKT1PfGiR0bAFEEGwBRBBsAUQQbAFEEGwBRBBsAUQQbAFGu9dimdPdduo/T3ZOrutUnm5pztm1+1VQfa9ucvO7vu+05PEl9PqfePyd2bABEEWwARBFsAEQRbABEEWwARBFsAEQRbABEKffYbvUVtvUeXpkX9cr8p1umeoS3bOtT3rJtLtet+9s9T27bnLmp57P7d2fHBkAUwQZAFMEGQBTBBkAUwQZAFMEGQBTBBkCUZ+axbZtX1G2qF7JtPlPVVM9yW79wak7h69dtSnffrvs6b+s12rEBEEWwARBFsAEQRbABEEWwARBFsAEQRbABEOXn+77SP3T3FbbNOevub3XPkbql+75Mzed75Xmb+t1VbXueu6/zySvXoWrbXMATOzYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAorTPY6v2SLp7SFNzy6pzkrrXfzI1z+xk29ypqm3zyRz/31Wft+7Pn3S/V2+dd6q3Z8cGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJT2HtsrvZBqf+KVuUSvzIfr7vlNzWnb9pxMzffqvg6v9LS2zXurHv/Wcbr7iHZsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQp99i2zd3p7mlN9Z9uHadq23y417/v68/bSeqcvKn79Yqpflv1vHZsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAET5+b6v9QRTPafX+yLdXplfNTXP75ZX5m9VbZvbV7Xtep509xqn5jVWj19lxwZAFMEGQBTBBkAUwQZAFMEGQBTBBkAUwQZAlPI8tlten8fW3Yua6oVUv9e2PlD3fbx137v7c93f99b9neq9vT4Pr2qq31Zdzy12bABEEWwARBFsAEQRbABEEWwARBFsAEQRbABEGeux3epJbJtXtO17VT9/q//U3Tc62dY/m+rPTc2fu2Vbf/SV3uGt47/Ojg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKD/f9105UHffqKq7FzLVd9k2p616/G3PyS1T17N6/G1zEG8dv3re7vWfvN4vfOX9accGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJTyPLZb/ZKpHkm3bf2qqu55dSe37u+2eWbb5v9VjzPV3+q+PtvmL267/iev9Ert2ACIItgAiCLYAIgi2ACIItgAiCLYAIgi2ACIUu6xTfWEXum9bes53eqpVL0yd2qql7mt99Otu7/1+vy/7vfG6/PwquzYAIgi2ACIItgAiCLYAIgi2ACIItgAiCLYAIhS7rGdTM0ZeqUn193Xqbr1favXc2o+1q37lTrX7ZU5W7ds+z2eTPWDu79X93rs2ACIItgAiCLYAIgi2ACIItgAiCLYAIgi2ACIUu6xdfdjuucGTfWKtvXPbunuV53c6s9Vj1/VfR2m5oS9Pq9rylRvbOp5m+oF2rEBEEWwARBFsAEQRbABEEWwARBFsAEQRbABEOXn+77SP2zrr0z1bKq2zVWa6p9VbZtz1n2cqm1zBKd+v1PzxrbN29s2d22qP2rHBkAUwQZAFMEGQBTBBkAUwQZAFMEGQBTBBkCU8jy2k+4+xEl3j+TW8W/1dabWMzVPbur6dNs2V++WbT3Ik23rOXnled7Gjg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKOUe21SfKfW8qfPeTrrnb51095am5sZVbespVt1a57Z5e9Xnp/t5uGWq12jHBkAUwQZAFMEGQBTBBkAUwQZAFMEGQBTBBkCUn+/7rhzolflGU/2h7j5Zt6n1b7sOVdt6hCfdfbvUdb7SHz2ZWk93b9WODYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAo5R5bd69i23lPtvWopnokr/d4uk3N/6t6ZZ1V23pgqcfZ9ju1YwMgimADIIpgAyCKYAMgimADIIpgAyCKYAMgyrV5bCdT83tOuueETdnWS6uet6q7Rzi1zm3n7f7dVb0+v/Bk2zq3rafKjg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKO09tlum+lVT/bnU73Xr+FVTPb/qel6fm/XKc1U9b7dt74Gp3uqt59OODYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAoY/PYTrbNMXq9D/SKqZ5NdT3dts0FfKXHmdoj7H7PnGzrfVbZsQEQRbABEEWwARBFsAEQRbABEEWwARBFsAEQ5Vf1H6q9hO6+wtTcoKpX5hhNHf9kqs/0Sn9uaj7ftr5X9bzVz996zl/va071O6vs2ACIItgAiCLYAIgi2ACIItgAiCLYAIgi2ACIUp7HNjV/qGpbv+2VntMr5932vab6Z7eOX/XKerbNb6se/+SV57bq1vW0YwMgimADIIpgAyCKYAMgimADIIpgAyCKYAMgSnuPbcq23slJd0/rltfnb01d523zxrb1Tau61//KXMZXem/V459Uz2vHBkAUwQZAFMEGQBTBBkAUwQZAFMEGQBTBBkCUsR7bVJ/jleOb7/XvtvXPpkz1tF753VVt62v+af3CW+zYAIgi2ACIItgAiCLYAIgi2ACIItgAiCLYAIhS7rG9rrt/Uz3vtv7c66bmaXX3w17pq22bZ3Yy1RvbNo+waur6VNmxARBFsAEQRbABEEWwARBFsAEQRbABEEWwARDlV/UfXuk/bevTTPVgpnokU729bXP+untF2+ZgvdLrqq7z1vO8bb7atufzFjs2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKKUe2wn3f2Yk229pW3zlqb6TNvmh031aaZ+F7dMzS07qZ53233v7ptum59Xdev9YMcGQBTBBkAUwQZAFMEGQBTBBkAUwQZAFMEGQJRrPbaT7n5Y1etznrZdh1vHn1rPLa8f/9Z5t81r3DbvsHreW7bdl5Nb18GODYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAo7T22bbbNZ6p6pTdz0t2L2taTm+on3eplnmyba7itp3Vr/d3z8MxjA4AHCDYAogg2AKIINgCiCDYAogg2AKIINgCi/HE9tpPuXs6t3knVK3Oeuvs6Vd1z8m71xm6d99b13NZv674vrxznllfeS3ZsAEQRbABEEWwARBFsAEQRbABEEWwARBFsAERp77Ftm/dzcquvc+v4t85bNdWbmZrTduvzJ6/08E6m+m3d92tq/lnVKz28be95OzYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAolzrsW2bG3TSPbfp1tysbX21bf2ek1fmk1Xdem5vHb96fV7pgf1ppubtdfca7dgAiCLYAIgi2ACIItgAiCLYAIgi2ACIItgAiPLzfd/0GgDgGjs2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAogg2AKIINgCiCDYAovwPButIJk+QajEAAAAASUVORK5CYII=" alt="Scan to save contact" style="width:120px; height:120px; border-radius:12px; border:1px solid #E2E4DD; background:#FFFFFF;">
-        <div style="font-family:'Inter',sans-serif; font-size:11px; color:#8B8F86; margin-top:8px;">Scan to save my contact</div>
-      </div>
-    </div>
-  </section>
-
+<!-- ============ NAV ============ -->
+<div class="navbar" style="display:flex; align-items:center; justify-content:space-between; padding:26px 0; position:sticky; top:0; background:rgba(255,255,255,0.94); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid #EFEDE5;">
+<a href="index.html" aria-label="ai4work home"><img src="assets/ai4work-logo.png" alt="ai4work" style="height:26px; width:auto;"></a>
+<input type="checkbox" id="mn" class="mn-cb" aria-label="Menu"><label for="mn" class="mn-btn" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></label>
+<div class="navlinks" style="display:flex; align-items:center; gap:26px;">
+<a class="navlink" href="#top" aria-current="page" style="color:#588C00;">Home</a>
+<a class="navlink" href="Pricing.html">Processes</a>
+<a class="navlink" href="mobile-processes.html#home">See it working</a>
+<a class="navlink" href="dashboards.html">Industries</a>
+<a class="navlink" href="UseCases.html">Real problems</a>
+<a class="navlink" href="#contact">Contact</a>
+<a class="btn-primary" href="#contact" style="padding:11px 20px; font-size:13px; border-radius:8px;">Let's Talk</a>
+</div>
 </div>
 
-</x-dc>
+<!-- ============ HERO ============ -->
+<section class="dots-bg hero-sec" style="margin:28px 0 48px 0; padding:56px 48px; background:#F5F9EF; border-radius:32px; border:1px solid #E3EFD5;">
+<div class="hero-wrap" style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;">
+<div>
+<div class="eyebrow" style="margin-bottom:20px;">Business Process Organisation &amp; Automation</div>
+<h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:54px; color:#141414; margin:0 0 4px 0; letter-spacing:-1.6px; line-height:1.08;">Your Team Shouldn't Have to Remember Everything.</h1>
+<h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:54px; color:#588C00; margin:0 0 24px 0; letter-spacing:-1.6px; line-height:1.08;">Your Processes Should.</h1>
+<p style="font-family:'Inter',sans-serif; font-size:16.5px; color:#5A5D57; line-height:1.7; margin:0 0 30px 0; max-width:480px;">We help small and medium businesses organise and automate repetitive work using the tools they already use.</p>
+<div style="display:flex; gap:12px; flex-wrap:wrap;">
+<a class="btn-primary" href="#contact">Find Your Process Bottleneck</a>
+<a class="btn-outline" href="#what-we-do">See What We Can Automate</a>
+<a href="https://wa.me/919662036811?text=Hi%20Ankitaa%2C%20I%20was%20looking%20at%20your%20website%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:#25D366; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; border-radius:10px; padding:12px 20px; text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> Chat on WhatsApp</a>
+</div>
+</div>
+
+<!-- Hero visual: process chaos -> ai4work -> organised device -->
+<div class="hero-vis" style="width:520px; max-width:100%; height:440px; margin:0 auto; position:relative;"><div style="position:relative; width:520px; height:440px; margin:0 auto;">
+
+  <!-- Process Chaos pill -->
+  <div style="position:absolute; left:70px; top:0px; background:#F0EFE9; border-radius:999px; padding:7px 18px; font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#3A3D36; text-transform:uppercase; letter-spacing:0.6px;">Process Chaos</div>
+
+  <!-- red smiley/chat tile (top-left) -->
+  <div style="position:absolute; left:6px; top:46px; width:58px; height:58px; border-radius:15px; background:#D9455A; box-shadow:0 10px 22px rgba(217,69,90,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(-9deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path><circle cx="9" cy="11" r="0.5" fill="#FFFFFF"></circle><circle cx="12" cy="11" r="0.5" fill="#FFFFFF"></circle><circle cx="15" cy="11" r="0.5" fill="#FFFFFF"></circle></svg>
+  </div>
+
+  <!-- purple bell tile (top-mid) -->
+  <div style="position:absolute; left:128px; top:34px; width:58px; height:58px; border-radius:15px; background:#8B5FBF; box-shadow:0 10px 22px rgba(139,95,191,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(8deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+  </div>
+
+  <!-- loose flying papers, flanking the clock -->
+  <div style="position:absolute; left:60px; top:118px; width:52px; height:66px; background:#FFFFFF; border:1.5px solid #D9D3C0; border-radius:3px; box-shadow:0 12px 20px rgba(20,20,20,0.14); transform:rotate(-13deg);">
+    <div style="margin:14px 8px 0 8px; height:2px; background:#E4E1D8;"></div>
+    <div style="margin:6px 8px 0 8px; height:2px; background:#E4E1D8;"></div>
+    <div style="margin:6px 8px 0 8px; height:2px; background:#E4E1D8;"></div>
+  </div>
+
+  <!-- clock, center chaos element -->
+  <div style="position:absolute; left:196px; top:70px; width:108px; height:108px; border-radius:50%; background:#FBF3E3; border:4px solid #C9C2AE; box-shadow:0 16px 30px rgba(20,20,20,0.16); display:flex; align-items:center; justify-content:center;">
+    <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#8B6A2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3.5 2"></path></svg>
+  </div>
+  <svg width="26" height="16" viewBox="0 0 26 16" style="position:absolute; left:186px; top:56px; overflow:visible; fill:none; stroke:#B9B6AB; stroke-width:2; stroke-linecap:round"><path d="M20 14C16 6 8 2 2 2"></path></svg>
+  <svg width="26" height="16" viewBox="0 0 26 16" style="position:absolute; left:306px; top:56px; overflow:visible; fill:none; stroke:#B9B6AB; stroke-width:2; stroke-linecap:round"><path d="M6 14C10 6 18 2 24 2"></path></svg>
+
+  <!-- orange checklist tile (right-mid) -->
+  <div style="position:absolute; left:296px; top:120px; width:58px; height:58px; border-radius:15px; background:#E8912D; box-shadow:0 10px 22px rgba(232,145,45,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(-6deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11"></path></svg>
+  </div>
+
+  <!-- blue envelope tile (left-lower) -->
+  <div style="position:absolute; left:26px; top:220px; width:58px; height:58px; border-radius:15px; background:#4A90D9; box-shadow:0 10px 22px rgba(74,144,217,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(7deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 6l10 7 10-7"></path></svg>
+  </div>
+
+  <!-- desk -->
+  <div style="position:absolute; left:0px; top:300px; width:320px; height:16px; background:#EDE7D8; border:1.5px solid #C9C2AE; border-radius:4px 4px 0 0;"></div>
+  <div style="position:absolute; left:26px; top:315px; width:268px; height:36px; background:#DED7C4; border:1.5px solid #C9C2AE; border-top:none;"></div>
+
+  <!-- second red tile: document, sitting on desk -->
+  <div style="position:absolute; left:120px; top:246px; width:58px; height:58px; border-radius:15px; background:#D9455A; box-shadow:0 10px 22px rgba(217,69,90,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(-5deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path></svg>
+  </div>
+
+  <!-- USB cable squiggle along the desk -->
+  <svg width="90" height="40" viewBox="0 0 90 40" style="position:absolute; left:176px; top:250px; overflow:visible; fill:none; stroke:#8a8378; stroke-width:2.5; stroke-linecap:round"><path d="M2 8C 30 8, 20 34, 60 30 S 86 10, 86 10"></path></svg>
+  <div style="position:absolute; left:170px; top:260px; width:16px; height:10px; border:2px solid #8a8378; border-radius:2px;"></div>
+
+  <!-- dark green gift/package tile, sitting on desk right side -->
+  <div style="position:absolute; left:250px; top:236px; width:58px; height:58px; border-radius:15px; background:#1D6F42; box-shadow:0 10px 22px rgba(29,111,66,0.4); display:flex; align-items:center; justify-content:center; transform:rotate(-7deg);">
+    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41L11 22l-8-8L11 6l9.59 9.41z"></path><path d="M11 6V2h4"></path><circle cx="7.5" cy="14.5" r="1.5" fill="#FFFFFF" stroke="none"></circle></svg>
+  </div>
+
+  <div style="position:absolute; left:0px; top:370px; width:320px; text-align:center; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#3A3D36; text-transform:uppercase; letter-spacing:1px;">Scattered Today</div>
+
+  <!-- arrow -->
+  <svg width="34" height="8" viewBox="0 0 34 8" style="position:absolute; left:346px; top:186px; overflow:visible; fill:none; stroke:#588C00; stroke-width:2.5; stroke-linecap:round"><defs><marker id="dc-arrow-head-filled-hero" orient="auto" markerWidth="6" markerHeight="6" refX="3.2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#588C00" stroke="none"/></marker></defs><path d="M 0 4 L 30 4" marker-end="url(#dc-arrow-head-filled-hero)"></path></svg>
+
+  <!-- device mockup: phone-style organised dashboard -->
+  <div style="position:absolute; left:390px; top:20px; width:130px; height:340px; box-sizing:border-box; background:#FBFBF8; border:2px solid #1E2E13; border-radius:26px; box-shadow:0 26px 50px rgba(20,20,20,0.16); overflow:hidden;">
+    <div style="height:28px; display:flex; align-items:center; justify-content:center; gap:5px; padding-top:6px;">
+      <div style="width:6px; height:6px; border-radius:50%; background:#E8912D;"></div>
+      <div style="width:6px; height:6px; border-radius:50%; background:#D9C24A;"></div>
+      <div style="width:6px; height:6px; border-radius:50%; background:#588C00;"></div>
+    </div>
+    <div style="padding:4px 12px 14px 12px; display:flex; flex-direction:column; gap:11px;">
+      <div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:12px; margin-bottom:1px;"><span style="color:#141414;">ai</span><span style="color:#588C00;">4</span><span style="color:#8B8F86;">work</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#7BC144; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Leads Qualified</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#E8912D; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Tasks Delegated</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#4A90D9; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Documents Generated</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#8B5FBF; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Payments Processed</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#D9455A; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Orders Confirmed</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+      <div style="display:flex; align-items:flex-start; gap:6px; font-family:'Inter',sans-serif; font-size:10.5px; color:#2E2E2C; font-weight:600; line-height:1.3;"><span style="width:7px; height:7px; border-radius:50%; background:#5A6B62; flex-shrink:0; margin-top:2px;"></span><span style="flex-grow:1;">Reports Automated</span><span style="color:#588C00; flex-shrink:0;">✓</span></div>
+    </div>
+  </div>
+  <div style="position:absolute; left:390px; top:370px; font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#1E4620; text-transform:uppercase; letter-spacing:0.5px; line-height:1.4;">Organised With<br>ai4work</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ============ THE PROBLEM ============ -->
+<section style="padding:8px 0 48px 0;">
+<div class="grid2" style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;">
+<div>
+<div class="eyebrow" style="margin-bottom:14px;">The Problem</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#141414; margin:0 0 18px 0; letter-spacing:-0.4px; line-height:1.3;">Your business isn't disorganised. Your processes are just doing too much manually.</h2>
+<p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.75; margin:0 0 14px 0;">A lead comes in on WhatsApp. Someone remembers to follow up. A document is requested over email. Someone updates Excel. A payment date approaches. Someone sends a reminder.</p>
+<p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.75; margin:0 0 14px 0;">The work gets done, but too much of it depends on people remembering, copying, forwarding and following up.</p>
+<p style="font-family:'Inter',sans-serif; font-size:15px; color:#141414; font-weight:600; line-height:1.7; margin:0;">That's where we come in.</p>
+</div>
+
+<div style="position:relative; width:100%; height:300px;">
+  <div style="position:absolute; left:0; top:0; width:44%; height:300px; box-sizing:border-box; padding:20px; background:#FAFAF8; border:1px solid #E7E4DB; border-radius:16px;">
+    <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#8B8F86; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">Before ai4work</div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-family:'Inter',sans-serif; font-size:13px; color:#5A5D57;">
+      <div>WhatsApp</div><div>Excel</div><div>Email</div><div>Documents</div><div>Payments</div><div>Memory</div>
+    </div>
+  </div>
+  <svg width="40" height="8" viewBox="0 0 40 8" style="position:absolute; left:calc(44% + 4px); top:146px; overflow:visible; fill:none; stroke:#B9B6AB; stroke-width:2; stroke-linecap:round"><defs><marker id="dc-arrow-head-filled-3" orient="auto" markerWidth="6" markerHeight="6" refX="3.2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#588C00" stroke="none"/></marker></defs><path d="M 0 4 L 36 4" marker-end="url(#dc-arrow-head-filled-3)" style="stroke:#588C00"></path></svg>
+  <div style="position:absolute; right:0; top:0; width:52%; height:300px; box-sizing:border-box; padding:20px; background:#F5F9EF; border:1px solid #D8ECC0; border-radius:16px;">
+    <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">After ai4work</div>
+    <div style="display:flex; flex-direction:column; gap:10px; font-family:'Inter',sans-serif; font-size:13px; color:#3f6b00; font-weight:600;">
+      <div>✓ Enquiry received</div><div>✓ Lead recorded</div><div>✓ Follow up scheduled</div><div>✓ Reminder sent</div><div>✓ Status updated</div><div>✓ Team sees what's next</div>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+
+<!-- ============ WHAT WE DO ============ -->
+<section id="what-we-do" style="padding:48px 40px; background:#FFFFFF; border:1px solid #EFEDE5; border-radius:28px; box-shadow:0 20px 48px rgba(20,20,20,0.05); margin-bottom:48px;">
+<div class="eyebrow" style="margin-bottom:14px;">What We Do</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:32px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.6px;">We turn repetitive work into organised processes.</h2>
+<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 36px 0; max-width:620px;">We look at how your business actually works, identify where time is being lost, and organise the process around the tools your team already knows. The steps below follow a customer through your business, from first enquiry to renewal, and the portal lets your customers see it too. Tap any step to see it working on a phone.</p>
+
+<div class="wwd" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px;">
+
+<a href="mobile-processes.html#lead" class="card wc" style="padding:16px; border-top:4px solid #588C00; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#588C00; margin-bottom:16px; box-shadow:0 10px 22px rgba(88,140,0,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><circle cx="12" cy="12" r="0.5" fill="#FFFFFF"></circle></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 1</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Lead Management</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Capture enquiries, nurture past customers and make sure follow ups never get missed.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#quote" class="card wc" style="padding:16px; border-top:4px solid #C99A2E; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#C99A2E; margin-bottom:16px; box-shadow:0 10px 22px rgba(201,154,46,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 13h8"></path><path d="M8 17h5"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#C99A2E; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 2</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Quotes and Invoices</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Pick items, get the total worked out and share a clean PDF on WhatsApp.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#order" class="card wc" style="padding:16px; border-top:4px solid #3B6FA6; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#3B6FA6; margin-bottom:16px; box-shadow:0 10px 22px rgba(59,111,166,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#3B6FA6; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 3</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Order Management</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Create orders once and track each one to dispatch without re entry.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#doc" class="card wc" style="padding:16px; border-top:4px solid #588C00; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#588C00; margin-bottom:16px; box-shadow:0 10px 22px rgba(88,140,0,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M9 15l2 2 4-4"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 4</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Document Collection</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Know what has arrived, what is pending and ask for the rest in one message.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#task" class="card wc" style="padding:16px; border-top:4px solid #7C5CBF; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#7C5CBF; margin-bottom:16px; box-shadow:0 10px 22px rgba(124,92,191,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect><path d="M14 17.5h7"></path><path d="M17.5 14v7"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#7C5CBF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 5</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Task Tracking</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Assign work, see who is behind and keep the whole team on the same page.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#msg" class="card wc" style="padding:16px; border-top:4px solid #C2447A; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#C2447A; margin-bottom:16px; box-shadow:0 10px 22px rgba(194,68,122,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path><path d="M12 7v4l2 2"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#C2447A; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 6</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Scheduled Messages</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Confirmations, reminders and updates go out on time, without repeating yourself.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#pay" class="card wc" style="padding:16px; border-top:4px solid #C99A2E; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#C99A2E; margin-bottom:16px; box-shadow:0 10px 22px rgba(201,154,46,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#C99A2E; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 7</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Payment Follow Up</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">See who owes what, oldest first, and send polite reminders in one tap.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#ren" class="card wc" style="padding:16px; border-top:4px solid #3B6FA6; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#3B6FA6; margin-bottom:16px; box-shadow:0 10px 22px rgba(59,111,166,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"></path><rect x="7" y="12" width="3" height="6"></rect><rect x="12" y="8" width="3" height="10"></rect><rect x="17" y="5" width="3" height="13"></rect></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#3B6FA6; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 8</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Renewals and Daily Reports</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Nothing lapses, and the owner gets a short summary every evening.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#portal" class="card wc" style="padding:16px; border-top:4px solid #7C5CBF; border-radius:16px; background:#FFFFFF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#7C5CBF; margin-bottom:16px; box-shadow:0 10px 22px rgba(124,92,191,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#7C5CBF; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Step 9</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">Client Portal</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">Your customers are informed at every stage on a page of their own, so there are far fewer calls and no WhatsApp updates to type. They also accept quotes, upload documents and pay there.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">See it on a phone &rarr;</div>
+</a>
+
+<a href="mobile-processes.html#home" class="card wc" style="grid-column:1/-1; padding:16px; border-top:4px solid #141414; border-radius:16px; background:#F5F9EF; display:flex; flex-direction:column; text-decoration:none;">
+<div class="icon-badge" style="background:#141414; margin-bottom:16px; box-shadow:0 10px 22px rgba(20,20,20,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"></path><path d="M5 10v10h14V10"></path><path d="M10 20v-6h4v6"></path></svg></div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#141414; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Everything together</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">All of it in one command centre</div>
+<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">The owner's home screen: what needs you today, what each person is doing, every process at a glance.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">Open the command centre &rarr;</div>
+</a>
+
+</div>
+</section>
+
+<!-- ============ SEE IT WORKING ============ -->
+<section id="see-it-working" style="padding:8px 0 20px 0;">
+<div class="eyebrow" style="margin-bottom:14px;">See It Working</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:30px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.5px; max-width:640px;">Try the screens before you talk to anyone.</h2>
+<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 32px 0; max-width:640px;">Everything below uses example data. Tap around, or read how other businesses got out of the same mess you may be in.</p>
+</section>
+
+<div class="grid3" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:20px;">
+<a href="mobile-processes.html#home" class="card" style="padding:26px; display:flex; flex-direction:column; border-top:4px solid #588C00; border-radius:20px; background:#F5F9EF;">
+<div style="display:flex; align-items:flex-end; gap:14px; height:150px; margin-bottom:22px;">
+<div style="width:96px; height:150px; background:#1E2615; border-radius:20px; padding:6px; box-sizing:border-box; box-shadow:0 14px 28px rgba(30,38,21,0.25);"><div style="background:#FFFFFF; border-radius:15px; height:100%; overflow:hidden;"><div style="background:#588C00; height:26px;"></div><div style="margin:7px 6px 0 6px; height:16px; border-radius:6px; background:#EEF5E2;"></div><div style="margin:6px 6px 0 6px; height:16px; border-radius:6px; background:#EEF5E2;"></div><div style="margin:6px 6px 0 6px; height:16px; border-radius:6px; background:#FBEFD9;"></div></div></div>
+<div style="flex:1; display:flex; flex-wrap:wrap; gap:7px; align-content:flex-end;">
+<span style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#3f6b00; background:#EEF5E2; border-radius:999px; padding:5px 12px;">Lead management</span>
+<span style="font-family:'Inter',sans-serif; font-size:12px; font-weight:700; color:#3f6b00; background:#EEF5E2; border-radius:999px; padding:5px 12px;">Payment follow up</span>
+</div>
+</div>
+
+<div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">On your phone, as the owner</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:19px; color:#141414; margin-bottom:8px; line-height:1.3;">The owner's home screen</div>
+<div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.65; margin-bottom:16px; flex-grow:1;">See what needs you today, what each person is doing, and nudge the team in one tap.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; color:#588C00;">Open the command centre &rarr;</div>
+</a>
+<a href="dashboards.html" class="card" style="padding:26px; display:flex; flex-direction:column; border-top:4px solid #3B6FA6; border-radius:20px; background:#F3F7FB;">
+<div style="height:150px; margin-bottom:22px; background:#FFFFFF; border:1px solid #DDE6EF; border-radius:14px; display:flex; overflow:hidden; box-shadow:0 14px 28px rgba(59,111,166,0.16);">
+<div style="width:56px; background:#EDF3F9; padding:12px 8px; box-sizing:border-box; display:flex; flex-direction:column; gap:8px;"><div style="height:8px; border-radius:4px; background:#3B6FA6;"></div><div style="height:8px; border-radius:4px; background:#C9D8E8;"></div><div style="height:8px; border-radius:4px; background:#C9D8E8;"></div><div style="height:8px; border-radius:4px; background:#C9D8E8;"></div></div>
+<div style="flex:1; padding:12px; display:flex; flex-direction:column; gap:9px;">
+<div style="display:flex; gap:7px;"><div style="flex:1; height:30px; border-radius:7px; background:#EDF3F9;"></div><div style="flex:1; height:30px; border-radius:7px; background:#FBEFD9;"></div><div style="flex:1; height:30px; border-radius:7px; background:#F8E2DF;"></div><div style="flex:1; height:30px; border-radius:7px; background:#DFF0D6;"></div></div>
+<div style="display:flex; gap:7px; flex:1;"><div style="flex:1.6; border-radius:7px; background:#F6F8FA;"></div><div style="flex:1; border-radius:7px; background:#F6F8FA; display:flex; align-items:flex-end; gap:5px; padding:8px;"><div style="flex:1; height:40%; background:#3B6FA6; border-radius:3px;"></div><div style="flex:1; height:70%; background:#3B6FA6; border-radius:3px;"></div><div style="flex:1; height:55%; background:#3B6FA6; border-radius:3px;"></div><div style="flex:1; height:90%; background:#3B6FA6; border-radius:3px;"></div></div></div>
+</div>
+</div>
+
+<div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:11px; color:#3B6FA6; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">On your desktop</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:19px; color:#141414; margin-bottom:8px; line-height:1.3;">Owner dashboards for 20 kinds of business</div>
+<div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.65; margin-bottom:16px; flex-grow:1;">Pick the industry closest to yours and see the numbers an owner would get.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; color:#3B6FA6;">Open the dashboards &rarr;</div>
+</a>
+<a href="UseCases.html" class="card" style="padding:26px; display:flex; flex-direction:column; border-top:4px solid #C99A2E; border-radius:20px; background:#FBF3E3;">
+<div style="height:150px; margin-bottom:22px; position:relative;">
+<div style="position:absolute; left:18px; top:6px; width:200px; height:96px; background:#FFFFFF; border:1px solid #F0E2C0; border-radius:12px; transform:rotate(-4deg); box-shadow:0 8px 18px rgba(201,154,46,0.15);"></div>
+<div style="position:absolute; left:46px; top:22px; width:200px; height:96px; background:#FFFFFF; border:1px solid #F0E2C0; border-radius:12px; transform:rotate(2deg); box-shadow:0 8px 18px rgba(201,154,46,0.18);"></div>
+<div style="position:absolute; left:30px; top:40px; width:210px; height:100px; background:#FFFFFF; border:1px solid #F0E2C0; border-radius:12px; padding:14px; box-sizing:border-box; box-shadow:0 12px 24px rgba(201,154,46,0.22);"><div style="width:28px; height:28px; border-radius:8px; background:#C99A2E; margin-bottom:10px;"></div><div style="height:7px; width:80%; border-radius:4px; background:#E6E3D8; margin-bottom:6px;"></div><div style="height:7px; width:60%; border-radius:4px; background:#EEEBE2;"></div></div>
+</div>
+
+<div style="font-family:'Poppins',sans-serif; font-weight:800; font-size:11px; color:#C99A2E; text-transform:uppercase; letter-spacing:1px; margin-bottom:8px;">In plain words</div>
+<div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:19px; color:#141414; margin-bottom:8px; line-height:1.3;">25 real problems, explained</div>
+<div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.65; margin-bottom:16px; flex-grow:1;">One short story per problem, with the screen that solves it.</div>
+<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:13px; color:#C99A2E;">Read the stories &rarr;</div>
+</a>
+</div>
+
+
+<!-- ============ WHO WE HELP ============ -->
+<section id="who-we-help" style="padding:48px 40px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:28px; margin-bottom:48px;">
+<div class="grid2" style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:48px; align-items:start;">
+<div>
+<div class="eyebrow" style="margin-bottom:14px;">Who We Help</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.4px; line-height:1.3;">If your team spends too much time doing the same thing repeatedly, let's talk.</h2>
+<p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.6; margin:0 0 28px 0;">We work with a wide range of industries, from professional services to manufacturing.</p>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#4A90D9; box-shadow:0 8px 16px rgba(74,144,217,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M20 7h-4V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">CA &amp; Professional Services</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#E8912D; box-shadow:0 8px 16px rgba(232,145,45,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M3 12l9-9 9 9"></path><path d="M5 10v10h14V10"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Real Estate &amp; Sales</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#8B5FBF; box-shadow:0 8px 16px rgba(139,95,191,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M2 16l20-9-9 20-2-8-9-3z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Travel</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#1D6F42; box-shadow:0 8px 16px rgba(29,111,66,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Insurance &amp; Financial</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#D9455A; box-shadow:0 8px 16px rgba(217,69,90,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.6z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Healthcare</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#3DAA57; box-shadow:0 8px 16px rgba(61,170,87,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Interior Designers</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#4A90D9; box-shadow:0 8px 16px rgba(74,144,217,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M3 21V9l6-4 6 4v12"></path><path d="M15 21V13l6-3v11"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Manufacturing &amp; Trading</span></div>
+<div class="card" style="padding:14px; display:flex; align-items:center; gap:12px;"><div style="width:34px; height:34px; border-radius:9px; background:#E8912D; box-shadow:0 8px 16px rgba(232,145,45,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M9 22v-4h6v4"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#141414;">Other SMEs</span></div>
+</div>
+</div>
+
+<div class="card" style="padding:24px 20px; background:#F5F9EF; border-color:#D8ECC0;">
+<div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Is ai4work Right For You?</div>
+<div style="display:flex; flex-direction:column; gap:12px; margin-bottom:22px;">
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Your team repeats the same task daily</div>
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Important info is spread across tools</div>
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Follow ups depend on people remembering</div>
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>You copy information between tools</div>
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>You want better organisation, not a big IT system</div>
+</div>
+<a class="btn-primary" href="#how-it-works" style="width:100%; box-sizing:border-box; text-align:center;">See How It Works</a>
+</div>
+</div>
+</section>
+
+<!-- ============ THE AI4WORK DIFFERENCE ============ -->
+<section id="how-it-works" style="padding:48px 40px; background:#FBFAF6; border:1px solid #EFEBDD; border-radius:28px; margin-bottom:48px;">
+<div class="eyebrow" style="margin-bottom:14px;">How It Works</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:32px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.6px; max-width:620px;">We don't start with technology. We start with your actual problem.</h2>
+<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 40px 0; max-width:600px;">Four simple steps. You don't need another complicated software system. You need your existing tools to make more sense.</p>
+
+<div class="steps-wrap" style="position:relative; width:100%; height:110px;">
+  <svg class="steps-line" width="100%" height="2" style="position:absolute; left:0; top:19px; overflow:visible;"><line x1="20" y1="1" x2="98%" y2="1" stroke="#E7E4DB" stroke-width="2"></line></svg>
+  <div class="grid4" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; position:relative;">
+    <div style="text-align:center;">
+      <div style="width:40px; height:40px; border-radius:50%; background:#4A90D9; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(74,144,217,0.35);">1</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Understand</div>
+      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">Your real problem</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:40px; height:40px; border-radius:50%; background:#E8912D; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(232,145,45,0.35);">2</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Organise</div>
+      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">Your people, tools and process</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:40px; height:40px; border-radius:50%; background:#8B5FBF; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(139,95,191,0.35);">3</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Automate</div>
+      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">The repetitive work</div>
+    </div>
+    <div style="text-align:center;">
+      <div style="width:40px; height:40px; border-radius:50%; background:#588C00; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(88,140,0,0.35);">4</div>
+      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Hand Over</div>
+      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">To your team</div>
+    </div>
+  </div>
+</div>
+<div style="margin-top:36px; padding-top:28px; border-top:1px solid #EFEBDD;">
+<div style="font-family:'Inter',sans-serif; font-size:13px; font-weight:700; color:#3A3D36; margin-bottom:14px;">And we work inside the tools your team already uses, so there is nothing new to learn.</div>
+<div style="display:flex; flex-wrap:wrap; gap:10px;">
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#3DAA57; box-shadow:0 8px 16px rgba(61,170,87,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">WhatsApp</span></div>
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#1D6F42; box-shadow:0 8px 16px rgba(29,111,66,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M9 3v18"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Excel</span></div>
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#4A90D9; box-shadow:0 8px 16px rgba(74,144,217,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 6l10 7 10-7"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Email</span></div>
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#E8912D; box-shadow:0 8px 16px rgba(232,145,45,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M8 6h8"></path><path d="M8 10h2"></path><path d="M14 10h2"></path><path d="M8 14h2"></path><path d="M14 14h2"></path><path d="M8 18h2"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Tally</span></div>
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#8B5FBF; box-shadow:0 8px 16px rgba(139,95,191,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Cloud Docs</span></div>
+<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#D9455A; box-shadow:0 8px 16px rgba(217,69,90,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Other Tools</span></div>
+</div>
+</div>
+</section>
+
+<!-- ============ FINAL CTA BANNER ============ -->
+<section style="background:#F5F9EF; border:1px solid #E3EFD5; border-radius:20px; padding:40px 44px; margin:56px 0; display:flex; align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap;">
+<div>
+<img src="assets/ai4work-logo.png" alt="ai4work" style="height:20px; width:auto; margin-bottom:16px;">
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; color:#141414; margin:0 0 8px 0; letter-spacing:-0.3px;">What is your team still doing manually?</h2>
+<p style="font-family:'Inter',sans-serif; font-size:14px; color:#5A5D57; line-height:1.6; margin:0; max-width:480px;">Tell us what happens repeatedly in your business. We'll help you identify where the process can be organised or automated.</p>
+</div>
+<div style="display:flex; gap:12px; flex-wrap:wrap; flex-shrink:0;">
+<a class="btn-primary" href="#contact">Find My Process Bottleneck</a>
+</div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<section id="contact" style="padding:16px 0 0 0;">
+
+<div class="card" style="padding:32px; margin-bottom:40px; max-width:520px;">
+<div id="cform">
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:19px; color:#141414; margin:0 0 6px 0;">Tell us what happens today</div>
+<div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; margin:0 0 20px 0;">A quick note is enough. We'll take it from there.</div>
+
+<div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Your Name</div>
+<input id="cname" autocomplete="name" placeholder="Your name" style="width:100%; box-sizing:border-box; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; font-family:'Inter',sans-serif; font-size:14px; margin-bottom:16px; color:#141414;">
+
+<div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">What's happening manually right now?</div>
+<textarea id="cmsg" placeholder="e.g. Every order gets typed into Excel by hand before production can start." rows="4" style="width:100%; box-sizing:border-box; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; font-family:'Inter',sans-serif; font-size:14px; margin-bottom:20px; resize:vertical; color:#141414;"></textarea>
+
+<button id="csend" type="button" class="btn-primary" style="border:none; cursor:pointer; width:100%; box-sizing:border-box; font-size:14.5px;">Send Message</button>
+</div>
+
+<div id="cdone" style="display:none">
+<div style="text-align:center; padding:12px 0;">
+<div style="width:48px; height:48px; border-radius:50%; background:#EAF3DC; display:flex; align-items:center; justify-content:center; margin:0 auto 16px auto;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#588C00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg></div>
+<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:18px; color:#141414; margin-bottom:6px;">Thanks<span id="cthx"></span>!</div>
+<div style="font-family:'Inter',sans-serif; font-size:14px; color:#5A5D57; line-height:1.6;">Your message is ready in WhatsApp. Just press send there, and I will get back to you within a day.</div>
+</div>
+</div>
+</div>
+
+<div style="display:flex; align-items:flex-start; justify-content:space-between; gap:40px; flex-wrap:wrap; padding-bottom:36px;">
+<div style="max-width:420px;">
+<p style="font-family:'Poppins',sans-serif; font-weight:600; font-size:20px; color:#141414; margin:0 0 22px 0; line-height:1.4;">If something in your business still runs on manual effort, let's talk.</p>
+<div style="display:flex; flex-direction:column; gap:12px; font-family:'Inter',sans-serif; font-size:14px;">
+<div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Phone</span><br>
+<a href="https://wa.me/919662036811" style="color:#141414;">+91 96620 36811</a><div style="margin-top:10px"><a href="https://wa.me/919662036811?text=Hi%20Ankitaa%2C%20I%20was%20looking%20at%20your%20website%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:#25D366; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; border-radius:10px; padding:12px 20px; text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> Chat on WhatsApp</a></div></div>
+<div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Email</span><br><a href="mailto:ankitaa@ai4work.in" style="color:#141414;">ankitaa@ai4work.in</a></div>
+<div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Web</span><br><a href="https://www.linkedin.com/in/ankitaa-s-goyal" style="color:#141414;">linkedin.com/in/ankitaa-s-goyal</a></div>
+</div>
+</div>
+<div style="text-align:center; flex-shrink:0;">
+<img src="assets/whatsapp-qr.png" alt="Scan to chat on WhatsApp" style="width:120px; height:120px; border-radius:14px; border:1px solid #E7E4DB; background:#FFFFFF;">
+</div>
+</div>
+<div style="border-top:1px solid #EFEDE5; padding:24px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+<img src="assets/ai4work-logo.png" alt="ai4work" style="height:20px; width:auto;">
+<div style="font-family:'Inter',sans-serif; font-size:12px; color:#8B8F86;">Business Process Organisation &amp; Automation</div>
+</div>
+</section>
+
+</div>
+<nav aria-label="Site pages" style="max-width:1180px; margin:0 auto; padding:22px 18px 8px; display:flex; flex-wrap:wrap; justify-content:center; gap:4px 22px; border-top:1px solid #E7E4DB; font-family:'Inter',sans-serif; font-size:14px;"><a href="index.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Home</a><a href="Pricing.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Processes</a><a href="mobile-processes.html#home" style="color:#3A3D36; font-weight:600; padding:8px 0;">See it working</a><a href="dashboards.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Industries</a><a href="UseCases.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Real problems</a><a href="index.html#contact" style="color:#3A3D36; font-weight:600; padding:8px 0;">Contact</a></nav>
+<a href="https://wa.me/919662036811?text=Hi" target="_blank" rel="noopener" aria-label="Chat with ai4work on WhatsApp" title="Chat on WhatsApp" style="position:fixed; right:16px; bottom:16px; bottom:max(16px, env(safe-area-inset-bottom)); width:58px; height:58px; border-radius:50%; background:#25D366; box-shadow:0 10px 24px rgba(20,20,20,0.28); display:flex; align-items:center; justify-content:center; z-index:50; -webkit-tap-highlight-color:transparent;"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFFFFF" d="M16.04 4C9.4 4 4.02 9.37 4.02 16c0 2.12.55 4.18 1.6 6L4 28l6.16-1.6A12 12 0 0 0 16.04 28C22.67 28 28.05 22.63 28.05 16S22.67 4 16.04 4zm0 21.9c-1.8 0-3.56-.49-5.1-1.4l-.37-.22-3.66.95.98-3.57-.24-.37A9.9 9.9 0 0 1 6.1 16c0-5.46 4.45-9.9 9.94-9.9 5.47 0 9.92 4.44 9.92 9.9s-4.45 9.9-9.92 9.9zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg></a>
+
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+ var close=function(){var c=document.getElementById('mn');if(c&&c.checked)c.checked=false};
+ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.navlinks a'))setTimeout(close,0);else if(!t.closest('.navbar'))close()},true);
+ window.addEventListener('hashchange',close);
+ var b=document.getElementById('csend');if(!b)return;
+ b.addEventListener('click',function(){
+  var n=(document.getElementById('cname').value||'').trim(),m=(document.getElementById('cmsg').value||'').trim();
+  var t='Hi Ankitaa, '+(n?'I am '+n+'. ':'')+(m?'Right now, this is what happens manually in my business: '+m:'I was looking at ai4work.in and would like to talk about my business.');
+  window.open('https://wa.me/919662036811?text='+encodeURIComponent(t),'_blank');
+  document.getElementById('cform').style.display='none';document.getElementById('cdone').style.display='block';
+  document.getElementById('cthx').textContent=n?', '+n:'';});
+});
+</script>
 </body>
 </html>

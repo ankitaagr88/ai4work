@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Order management | ai4work demo</title>
+<meta name="description" content="ai4work builds simple process automation for Indian businesses: leads, quotes, orders, documents, tasks, payments and a client portal, all on your team&#x27;s phones.">
+<link rel="icon" href="assets/ai4work-logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{--bg:#FBFBF8;--surface:#fff;--ink:#141414;--muted:#5D6459;--soft:#8B8F86;--line:#E4E8DF;--green:#588C00;--greend:#3f6b00;--gsoft:#EEF5E2;--warn:#9A5B00;--wsoft:#FBEFD9;--bad:#B4372C;--bsoft:#F8E2DF;--accent:#E8912D;--head:'Poppins','Segoe UI',sans-serif;--body:'Inter','Segoe UI',sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5;padding:0 16px 28px}
+.wrap{max-width:1100px;margin:0 auto}
+a{color:var(--green);text-decoration:none}a:hover{color:var(--greend)}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:20px 0;border-bottom:1px solid var(--line)}
+.mark{font-family:var(--head);font-weight:800;font-size:24px;letter-spacing:-.02em}.mark .a{color:var(--ink)}.mark .f{color:var(--green)}.mark .w{color:#9a9a9a;font-weight:400}
+.links{display:flex;gap:20px;flex-wrap:wrap;font-weight:600;font-size:14px}.links a{color:#3A3D36}.links a:hover{color:var(--green)}
+main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,420px);gap:56px;padding:40px 0;align-items:start}
+@media(max-width:880px){main{grid-template-columns:minmax(0,1fr);gap:28px;padding:28px 0}}
+.k{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent);font-weight:700}
+h1{font:700 clamp(28px,3.6vw,38px)/1.15 var(--head);letter-spacing:-.8px;margin:8px 0 14px}
+.lead{font-size:17px;color:var(--muted);margin:0 0 22px;max-width:56ch;line-height:1.65}
+h2{font:800 clamp(21px,2.3vw,25px)/1.25 var(--head);text-transform:none;letter-spacing:-.015em;color:#141414;margin:38px 0 12px}
+h2:before{content:"";display:block;width:36px;height:4px;border-radius:2px;background:var(--green);margin-bottom:11px}
+h2:first-child{margin-top:26px}
+ul.pts{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+ul.pts li{padding-left:18px;position:relative;color:#3A3D36}
+ul.pts li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.price{margin-top:26px;padding:18px 20px;background:#fff;border:1px solid #E7E4DB;border-top:4px solid var(--accent);border-radius:14px;max-width:460px}
+.price small{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--soft)}
+.price b{display:block;font:700 22px var(--head);color:var(--accent);margin:4px 0 6px}
+.price span{font-size:13.5px;color:var(--muted)}
+.cta{display:inline-block;margin-top:16px;background:var(--green);color:#fff;font-weight:700;font-size:14px;border-radius:10px;padding:12px 22px}
+.cta:hover{background:var(--greend);color:#fff}
+.try{margin-top:14px;font-size:13px;color:var(--soft)}
+.stage{position:sticky;top:20px;display:flex;flex-direction:column;align-items:center;gap:10px}
+@media(max-width:880px){.stage{position:static}}
+.body>*{flex:none}
+@media(max-width:560px){
+body{padding:0 12px 24px;font-size:16px}
+.top{padding:14px 0}.links{gap:6px 16px}.links a{padding:10px 0;display:inline-block}
+.mark{font-size:22px}
+.lead{font-size:16px}.k{font-size:12.5px}
+ul.pts li{font-size:15.5px}
+.price span{font-size:14.5px}.price small{font-size:12px}
+.cta{padding:15px 22px;font-size:15px;display:block;text-align:center}
+.try{font-size:14px}
+.dev{max-width:none;padding:6px;border-radius:28px}
+.scr{height:680px;height:min(calc(100vh - 28px),720px);height:min(calc(100dvh - 28px),720px);min-height:520px;border-radius:22px}
+.ibtn{width:44px;height:44px}
+.btn{padding:13px 14px;font-size:15px}.btn.sm{padding:10px 13px;font-size:13.5px;min-height:40px}
+.seg button{min-height:38px;padding:8px 14px;font-size:13.5px}
+.nm{font-size:15.5px}.sub{font-size:13.5px}.pill{font-size:12.5px}.kp small{font-size:12px}
+input,select,textarea{font-size:16px;padding:11px 12px}
+label.f{font-size:13px}
+}
+
+.dev{width:100%;max-width:390px;background:#1E2615;border-radius:36px;padding:10px;box-shadow:0 22px 44px -18px rgba(20,20,20,.45)}
+.scr{background:#F4F6F0;border-radius:27px;overflow:hidden;height:700px;display:flex;flex-direction:column;position:relative}
+.hd{background:var(--green);color:#fff;padding:12px 14px;display:flex;align-items:center;gap:12px;flex:none}
+.hd b{font:700 17px var(--head);display:block;line-height:1.15}.hd small{font-size:12.5px;opacity:.92;display:block}
+.hd .tt{flex:1;min-width:0}
+.ibtn{width:36px;height:36px;border-radius:10px;border:0;background:rgba(255,255,255,.18);color:#fff;display:grid;place-items:center;cursor:pointer;flex:none;padding:0}
+.av{width:30px;height:30px;border-radius:50%;background:#fff;color:var(--green);display:grid;place-items:center;font:700 12px var(--head);flex:none}
+.body{flex:1;overflow-y:auto;overflow-x:hidden;padding:12px;display:flex;flex-direction:column;gap:10px}
+.ft{flex:none;padding:10px 12px;border-top:1px solid var(--line);background:#fff;display:flex;gap:8px}
+button{font-family:inherit}
+.btn{font:700 14px var(--body);border:0;border-radius:10px;padding:11px 14px;cursor:pointer;background:var(--green);color:#fff;flex:1}
+.btn:hover{background:var(--greend)}.btn.ghost{background:var(--gsoft);color:var(--greend)}.btn.sm{padding:6px 11px;font-size:12.5px;flex:none;border-radius:8px}
+.btn.line{background:#fff;color:#3A3D36;border:1px solid var(--line)}
+.seg{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}.seg::-webkit-scrollbar{display:none}
+.seg button{flex:none;font:600 12.5px var(--body);border:1px solid var(--line);background:#fff;color:var(--muted);border-radius:999px;padding:5px 12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--gsoft);color:var(--greend);border-color:var(--green)}
+.kp{display:flex;gap:8px}.kp div{flex:1;min-width:0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:8px 10px}
+.kp small{display:block;font-size:11px;color:var(--soft);line-height:14px}.kp b{display:block;font:700 18px var(--head);font-variant-numeric:tabular-nums}
+.kp .w b{color:var(--warn)}.kp .b b{color:var(--bad)}.kp .g b{color:var(--greend)}
+.card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px}
+.row{display:flex;align-items:center;gap:10px}.sp{justify-content:space-between}
+.nm{font-weight:700;font-size:14.5px;line-height:1.3}.sub{font-size:12.5px;color:var(--muted);line-height:1.4}
+.pill{flex:none;font-size:11.5px;font-weight:700;padding:2px 9px;border-radius:999px;background:var(--gsoft);color:var(--greend);white-space:nowrap}
+.pill.w{background:var(--wsoft);color:var(--warn)}.pill.b{background:var(--bsoft);color:var(--bad)}.pill.n{background:#E7EAE3;color:var(--muted)}
+.ava{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font:700 10.5px var(--head);color:#fff;flex:none}
+input,select,textarea{width:100%;font:inherit;font-size:14.5px;color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 10px}
+textarea{resize:none;line-height:1.5}
+label.f{display:block;font-size:12px;color:var(--soft);margin:0 0 3px;font-weight:600}.fld{margin-bottom:9px}
+.chk{width:24px;height:24px;border-radius:7px;border:2px solid #B9BDB1;background:#fff;cursor:pointer;flex:none;display:grid;place-items:center;color:#fff;font-weight:700;font-size:13px;padding:0}
+.chk[aria-checked="true"]{background:var(--green);border-color:var(--green)}
+.bar{height:6px;border-radius:3px;background:#E7EAE3;overflow:hidden}.bar i{display:block;height:100%;background:var(--green);border-radius:3px}
+.steps{display:flex;gap:4px}.steps i{flex:1;height:6px;border-radius:3px;background:#E7EAE3}.steps i.on{background:var(--green)}
+.sw{width:42px;height:24px;border-radius:12px;border:0;background:#CFD3C8;position:relative;cursor:pointer;flex:none;padding:0}
+.sw:after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;transition:left .15s}
+.sw[aria-checked="true"]{background:var(--green)}.sw[aria-checked="true"]:after{left:21px}
+.bub{background:#E3F1D6;border-radius:12px 12px 3px 12px;padding:9px 11px;font-size:13.5px;line-height:1.5;align-self:flex-end;max-width:92%;white-space:pre-wrap}
+.bub small{display:block;text-align:right;color:var(--soft);font-size:11px;margin-top:2px}
+.scrim{position:absolute;inset:0;background:rgba(20,20,20,.38);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20;display:flex;align-items:flex-end}
+.scrim.on{opacity:1;pointer-events:auto}
+.sheet{background:#fff;width:100%;max-height:88%;overflow-y:auto;border-radius:20px 20px 0 0;padding:16px 14px 14px;transform:translateY(24px);transition:transform .2s}
+.scrim.on .sheet{transform:none}
+.sheet h3{font:700 16px var(--head);margin:0 0 10px}
+.drawer{position:absolute;top:0;bottom:0;left:0;width:78%;background:#fff;z-index:30;transform:translateX(-102%);transition:transform .22s;padding:18px 12px;display:flex;flex-direction:column;gap:2px;box-shadow:8px 0 24px rgba(0,0,0,.2)}
+.drawer.on{transform:none}
+.drawer .brand{padding:2px 8px 12px;border-bottom:1px solid var(--line);margin-bottom:8px}.drawer .brand b{font:700 15px var(--head);display:block}.drawer .brand small{color:var(--soft);font-size:12px}
+.drawer button.m{text-align:left;font:600 14px var(--body);border:0;background:transparent;color:#3A3D36;padding:10px;border-radius:9px;cursor:pointer}
+.drawer button.m[aria-current="true"]{background:var(--gsoft);color:var(--greend)}
+.drawer .cr{margin-top:auto;font-size:11.5px;color:var(--soft);opacity:.7;padding:8px}
+.dim{position:absolute;inset:0;background:rgba(20,20,20,.3);z-index:25;opacity:0;pointer-events:none;transition:opacity .2s}.dim.on{opacity:1;pointer-events:auto}
+.toast{position:absolute;left:12px;right:12px;bottom:76px;background:#141414;color:#fff;border-radius:10px;padding:10px 12px;font-size:13px;text-align:center;z-index:40;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none}.toast.on{opacity:1;transform:none}
+.credit{opacity:.55;font-size:12.5px}.credit .mark{font-size:13px}
+footer.page{margin-top:6px;border-top:1px solid var(--line);padding-top:16px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:13.5px;color:var(--muted)}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+
+
+.det{margin:6px 0 30px}
+.det h2.big{font:800 clamp(22px,2.6vw,28px)/1.2 var(--head);letter-spacing:-.02em;margin:34px 0 6px;color:#141414}
+.det .sub2{color:var(--muted);margin:0 0 16px;max-width:62ch;font-size:15.5px}
+.det .two2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.det .bx{background:#fff;border:1px solid #E7E4DB;border-radius:16px;padding:20px 22px}
+.det .bx h3{font:700 12px var(--body);letter-spacing:1.2px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
+.det .bx ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+.det .bx li{padding-left:16px;position:relative;font-size:15px}
+.det .bx li:before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.det .inds{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.det .ind{background:#fff;border:1px solid #E7E4DB;border-radius:14px;padding:16px 18px}
+.det .ind b{display:block;font:700 15.5px var(--head);margin-bottom:4px}.det .ind span{font-size:14px;color:var(--muted);line-height:1.5}
+.det .pcard{display:grid;grid-template-columns:minmax(0,300px) 1fr;gap:20px;background:#fff;border:1px solid #E7E4DB;border-top:4px solid var(--accent);border-radius:16px;padding:22px}
+.det .pcard small{display:block;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--soft)}
+.det .pcard .pp{font:800 34px var(--head);color:var(--accent);margin:4px 0 8px;letter-spacing:-.02em}
+.det .pcard p{margin:0;font-size:14px;color:var(--muted)}
+.det .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.det .tiers div{background:#F5F7F3;border-radius:10px;padding:10px 12px;font-size:13.5px;color:#3A3D36}.det .tiers b{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+@media(max-width:860px){.det .two2,.det .pcard{grid-template-columns:1fr}.det .inds{grid-template-columns:1fr 1fr}.det .tiers{grid-template-columns:1fr}}
+@media(max-width:560px){.det .inds{grid-template-columns:1fr}}
+
+.cmp{border:1px solid #E7E4DB;border-radius:14px;overflow:hidden;background:#fff;max-width:980px}
+.cmp .r{display:grid;grid-template-columns:150px 1fr 1fr;border-top:1px solid #E7E4DB}
+.cmp .r>div{padding:12px 14px;font-size:15px;line-height:1.45}
+.cmp .r.h{border-top:0}
+.cmp .a{font-weight:700;color:#141414;background:#FAFAF7}
+.cmp .wo{background:#FFF9F8;color:#3A3D36}.cmp .wi{background:#F6FAEE;color:#141414}
+.cmp .h>div{font:800 13px 'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase}
+.cmp .h .wo{background:#F8E2DF;color:#B4372C}.cmp .h .wi{background:#DDEFC6;color:#3f6b00}
+.cmp .x{color:#B4372C;font-weight:800;margin-right:6px}.cmp .ok{color:#3f6b00;font-weight:800;margin-right:6px}
+@media(max-width:640px){.cmp .r{grid-template-columns:1fr 1fr}.cmp .r>.a{grid-column:1/-1;padding-bottom:4px}.cmp .r.h>.a{display:none}.cmp .r>div{font-size:14.5px}}
+</style>
+
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="top"><a class="mark" href="index.html"><span class="a">ai</span><span class="f">4</span><span class="w">work</span></a>
+<nav class="links"><a href="Pricing.html">&larr; All processes</a><a href="index.html">Home</a><a href="mobile-processes.html#home">See it working</a><a href="dashboards.html">Industries</a><a href="UseCases.html">Real problems</a><a href="index.html#contact">Contact</a><a href="index.html#contact" style="color:#588C00">Let's Talk</a></nav></header>
+<main>
+<section><div class="k">Step 3 of 9</div><h1>Order management</h1><p class="lead">Each order moves through the stages your business already uses. Anyone on the team can answer "where is my order?" in seconds, and the customer can be told automatically.</p>
+<h2>What the owner sees on this screen</h2><ul class="pts"><li>A stage bar on every order shows exactly where it stands</li><li>Filter by stage and see how many orders sit in each</li><li>Orders stuck for more than three days are flagged</li><li>One tap moves an order forward and tells the customer</li><li>A history on each order shows who moved it and when</li></ul>
+<a class="cta" href="index.html#contact">Talk about this process</a>
+<p class="try">Try it: move an order forward, open its history, or add a new order. Example data only. Nothing here is saved.</p></section>
+<aside class="stage"><div class="dev"><div class="scr">
+<div class="hd"><button class="ibtn" data-a="menu" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="tt"><b id="t"></b><small id="s"></small></div><span class="av">A</span></div>
+<div class="body" id="body"></div><div class="ft" id="ft"></div>
+<div class="dim" id="dim" data-a="menu"></div>
+<div class="drawer" id="drawer"><div class="brand"><b>Order Desk</b><small>Example business</small></div><div id="menu"></div><div class="cr">created by ai4work</div></div>
+<div class="scrim" id="scrim" data-a="scrim"><div class="sheet" id="sheet"></div></div>
+<div class="toast" id="toast" role="status"></div>
+</div></div></aside>
+</main>
+<section class="det">
+<h2 class="big">Without it and with it</h2>
+<p class="sub2">The same day in your business, before and after.</p>
+<div class="cmp" role="table" aria-label="Without it and with it"><div class="r h" role="row"><div class="a"></div><div class="wo">Without it</div><div class="wi">With it</div></div><div class="r"><div class="a">Capturing</div><div class="wo"><span class="x">&#10005;</span>Typed again at every stage</div><div class="wi"><span class="ok">&#10003;</span>Captured once, moved on with one tap</div></div><div class="r"><div class="a">Status</div><div class="wo"><span class="x">&#10005;</span>Where is my order takes three calls to answer</div><div class="wi"><span class="ok">&#10003;</span>The stage is on the card, so anyone answers in seconds</div></div><div class="r"><div class="a">Delays</div><div class="wo"><span class="x">&#10005;</span>The customer notices before you do</div><div class="wi"><span class="ok">&#10003;</span>Stuck orders are flagged to you early</div></div><div class="r"><div class="a">Customer updates</div><div class="wo"><span class="x">&#10005;</span>Phone calls from the team</div><div class="wi"><span class="ok">&#10003;</span>An automatic message at the stages you choose</div></div></div>
+<h2 class="big">How it helps you organise and save time</h2>
+<p class="sub2">What changes for you and your team once order management runs this way.</p>
+<div class="two2"><div class="bx"><h3>How it organises your work</h3><ul><li>Each order is captured once with customer, items and quantity</li><li>A stage bar on every order shows where it stands</li><li>Anyone on the team can answer where is my order</li></ul></div><div class="bx"><h3>How it saves time</h3><ul><li>No re typing an order at each stage</li><li>Customers are told automatically at the stages you choose</li><li>Delays are seen by you before the customer calls</li></ul></div></div>
+<h2 class="big">How different industries can use it</h2>
+<p class="sub2">The same process, shaped around how each business works.</p>
+<div class="inds"><div class="ind"><b>Textile and embroidery</b><span>Received, approved, production, packed and dispatched by design</span></div><div class="ind"><b>Batteries and electricals</b><span>Orders, stock check and dispatch with dealer wise status</span></div><div class="ind"><b>Packaging and manufacturing</b><span>Job orders moving through machines and departments</span></div><div class="ind"><b>Food and bakery</b><span>Custom orders with delivery dates and slots</span></div><div class="ind"><b>Jewellery</b><span>Making orders with artisan wise stages</span></div><div class="ind"><b>Ecommerce sellers</b><span>Marketplace and direct orders in one status list</span></div></div>
+<h2 class="big">What affects the price</h2>
+<p class="sub2">The starting price is for the process as shown on this page. These are the things that move it.</p>
+<div class="pcard"><div><small>Starting from, one time</small><div class="pp">&#8377;16,800</div><p>No subscription and no monthly fee to us. Payment on delivery, with no advance. Setup with your branding and your data, a training session and three months of support are included.</p></div>
+<div><small>The price depends on</small><ul style="margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>How many stages an order passes through</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>How many teams hand over between stages</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Order types, such as custom made and from stock</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Partial dispatches and split deliveries</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Linking with stock or accounts software</li></ul>
+<div class="tiers"><div><b>Simple</b>One team, up to 5 stages, one follow up rule. Starting price.</div><div><b>Typical</b>Two or three teams, 6 to 8 stages, a few rules. Starting price plus tailoring.</div><div><b>Complex</b>Four or more departments, many stages and conditions. Priced after a short call.</div></div></div></div>
+<p style="margin-top:20px"><a class="cta" href="index.html#contact">Tell me how your business works, and I will place you</a> <a href="Pricing.html" style="margin-left:14px;font-weight:700;color:var(--greend)">See all processes &rarr;</a></p>
+</section>
+
+<footer class="page"><span>Ankitaa S Goyal &middot; Business Process Consultant &middot; +91 96620 36811 &middot; ankitaa@ai4work.in</span><span class="credit">created by <span class="mark"><span class="a">ai</span><span class="f">4</span><span class="w">work</span></span></span></footer>
+</div>
+<div style="max-width:1100px; margin:8px auto 0; padding:18px 0 0; font-family:'Inter',sans-serif;"><div style="font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#8B8F86; margin-bottom:8px;">Other processes</div><div style="display:flex; flex-wrap:wrap; gap:8px;"><a href="lead-management.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Lead management</a><a href="quotes-invoices.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Quotes and invoices</a><a href="document-collection.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Document collection</a><a href="task-tracking.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Task tracking</a><a href="scheduled-messages.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Scheduled messages</a><a href="payment-follow-up.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Payment follow up</a><a href="renewals-daily-report.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Renewals and daily report</a><a href="client-portal.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Client portal</a></div></div>
+<div style="text-align:center; margin:26px 0 6px;"><a href="https://wa.me/919662036811?text=Hi%20Ankitaa%2C%20I%20was%20looking%20at%20your%20website%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:#25D366; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; border-radius:10px; padding:12px 20px; text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> Chat on WhatsApp</a></div>
+<nav aria-label="Site pages" style="max-width:1180px; margin:0 auto; padding:22px 18px 8px; display:flex; flex-wrap:wrap; justify-content:center; gap:4px 22px; border-top:1px solid #E7E4DB; font-family:'Inter',sans-serif; font-size:14px;"><a href="index.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Home</a><a href="Pricing.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Processes</a><a href="mobile-processes.html#home" style="color:#3A3D36; font-weight:600; padding:8px 0;">See it working</a><a href="dashboards.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Industries</a><a href="UseCases.html" style="color:#3A3D36; font-weight:600; padding:8px 0;">Real problems</a><a href="index.html#contact" style="color:#3A3D36; font-weight:600; padding:8px 0;">Contact</a></nav>
+<a href="https://wa.me/919662036811?text=Hi" target="_blank" rel="noopener" aria-label="Chat with ai4work on WhatsApp" title="Chat on WhatsApp" style="position:fixed; right:16px; bottom:16px; bottom:max(16px, env(safe-area-inset-bottom)); width:58px; height:58px; border-radius:50%; background:#25D366; box-shadow:0 10px 24px rgba(20,20,20,0.28); display:flex; align-items:center; justify-content:center; z-index:50; -webkit-tap-highlight-color:transparent;"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFFFFF" d="M16.04 4C9.4 4 4.02 9.37 4.02 16c0 2.12.55 4.18 1.6 6L4 28l6.16-1.6A12 12 0 0 0 16.04 28C22.67 28 28.05 22.63 28.05 16S22.67 4 16.04 4zm0 21.9c-1.8 0-3.56-.49-5.1-1.4l-.37-.22-3.66.95.98-3.57-.24-.37A9.9 9.9 0 0 1 6.1 16c0-5.46 4.45-9.9 9.94-9.9 5.47 0 9.92 4.44 9.92 9.9s-4.45 9.9-9.92 9.9zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg></a>
+
+
+
+<script>
+(function(){window.DCLogic=function(p){this.props=p||{};this.state={}};DCLogic.prototype.setState=function(){};
+document.addEventListener('DOMContentLoaded',function(){try{var C=window.__ai4Component;if(C){var c=new C({});if(c.componentDidMount)c.componentDidMount()}}catch(e){console.error(e)}})})();
+</script>
+<script>
+window.__ai4Component=class Component extends DCLogic {
+  componentDidMount() {
+    if (document.__ai4Started) return; document.__ai4Started = true;
+    try {
+
+const $=s=>document.querySelector(s);
+const esc=t=>String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
+const COL=['#588C00','#3B6FA6','#C99A2E','#7C5CBF','#C2447A','#E8912D'];
+const ava=(n,i)=>`<span class="ava" style="background:${COL[(i===undefined?n.charCodeAt(0):i)%COL.length]}">${esc(n[0])}</span>`;
+let tt;function say(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(tt);tt=setTimeout(()=>t.classList.remove('on'),2200)}
+function openSheet(h){$('#sheet').innerHTML=h;$('#scrim').classList.add('on')}
+function closeSheet(){$('#scrim').classList.remove('on')}
+function toggleMenu(){$('#drawer').classList.toggle('on');$('#dim').classList.toggle('on')}
+function paintMenu(){$('#menu').innerHTML=MENU.map((m,i)=>`<button class="m" data-a="mnu" aria-current="${i===0}">${esc(m)}</button>`).join('')}
+function paint(){const v=VIEW();$('#t').textContent=v.t;$('#s').textContent=v.sub;$('#body').innerHTML=v.body;const f=$('#ft');f.innerHTML=v.ft||'';f.style.display=v.ft?'flex':'none'}
+document.addEventListener('click',ev=>{
+ const b=ev.target.closest('[data-a]');if(!b)return;const a=b.dataset.a;
+ if(a==='menu'){toggleMenu();return}
+ if(a==='mnu'){toggleMenu();say('Opens in the full app');return}
+ if(a==='scrim'){if(ev.target===b)closeSheet();return}
+ if(a==='close'){closeSheet();return}
+ ACT(a,b.dataset,ev);});
+document.addEventListener('input',ev=>{const t=ev.target;if(t.dataset&&t.dataset.in&&typeof INP==='function')INP(t.dataset.in,t.value,t)});
+document.addEventListener('change',ev=>{const t=ev.target;if(t.dataset&&t.dataset.ch&&typeof CHG==='function')CHG(t.dataset.ch,t.value,t)});
+
+const MENU=['Orders','Stock check','Dispatch plan','Customers','Settings'];
+const ST=['Received','Approved','Production','Packed','Dispatched'];
+const S={f:'All',open:null,id:200,o:[
+{id:1,c:'Gupta Fabrics',i:'Design 884, 120 m',s:1,days:1,h:['Received on Mon','Approved on Tue']},
+{id:2,c:'Sanghvi Sarees',i:'Design 312, 60 pcs',s:2,days:5,h:['Received on Mon','Approved on Tue','Production started on Wed']},
+{id:3,c:'Agarwal Textiles',i:'Design 205, 200 m',s:3,days:1,h:['Received last week','Approved','Production done','Packed today']},
+{id:4,c:'Jain Traders',i:'Design 884, 80 m',s:0,days:0,h:['Received today']},
+{id:5,c:'Patel Brothers',i:'Design 150, 45 pcs',s:2,days:2,h:['Received on Mon','Approved on Mon','Production started on Tue']}]};
+function VIEW(){
+ const O=S.o,rows=O.filter(o=>S.f==='All'||ST[o.s]===S.f);
+ const body=`<div class="kp"><div><small>In progress</small><b>${O.filter(o=>o.s<4).length}</b></div><div class="w"><small>Stuck over 3 days</small><b>${O.filter(o=>o.s<4&&o.days>3).length}</b></div><div class="g"><small>Dispatched</small><b>${O.filter(o=>o.s===4).length}</b></div></div>
+ <div class="seg">${['All',...ST].map(x=>`<button data-a="f" data-v="${x}" aria-pressed="${S.f===x}">${x}${x==='All'?'':' '+O.filter(o=>ST[o.s]===x).length}</button>`).join('')}</div>
+ ${rows.map(o=>`<div class="card"><div class="row sp"><div style="min-width:0"><div class="nm">${esc(o.c)}</div><div class="sub">#${100+o.id} &middot; ${esc(o.i)}</div></div><span class="pill ${o.s===4?'':o.days>3?'b':'n'}">${o.days>3&&o.s<4?'Stuck '+o.days+' days':ST[o.s]}</span></div>
+ <div class="steps" style="margin:10px 0 4px">${ST.map((x,j)=>`<i class="${j<=o.s?'on':''}"></i>`).join('')}</div><div class="sub">${ST[o.s]}${o.s<4?' &rarr; next: '+ST[o.s+1]:' &middot; customer told'}</div>
+ <div class="row" style="margin-top:9px;gap:8px">${o.s<4?`<button class="btn sm" data-a="mv" data-id="${o.id}">Move to ${ST[o.s+1]}</button>`:''}<button class="btn sm line" data-a="hist" data-id="${o.id}">${S.open===o.id?'Hide history':'History'}</button></div>
+ ${S.open===o.id?`<div style="margin-top:9px;display:flex;flex-direction:column;gap:6px">${o.h.map((h,i)=>`<div class="sub" style="padding-left:12px;border-left:3px solid ${i===o.h.length-1?'#E8912D':'#E4E8DF'}">${esc(h)}</div>`).join('')}</div>`:''}</div>`).join('')||'<div class="card sub">No orders at this stage.</div>'}`;
+ return {t:'Orders',sub:'Owner view, '+O.filter(o=>o.s<4).length+' in progress',body,ft:'<button class="btn" data-a="add">New order</button>'};
+}
+function ACT(a,d){
+ if(a==='f'){S.f=d.v;paint()}
+ else if(a==='hist'){S.open=S.open==d.id?null:+d.id;paint()}
+ else if(a==='mv'){const o=S.o.find(x=>x.id==d.id);o.s++;o.days=0;o.h.push(ST[o.s]+' just now');paint();say('Moved to '+ST[o.s]+'. Customer told on WhatsApp')}
+ else if(a==='add'){openSheet(`<h3>New order</h3><div class="fld"><label class="f" for="oc">Customer</label><input id="oc" value="Shah Textiles"></div><div class="row" style="gap:8px"><div class="fld" style="flex:2"><label class="f" for="oi">Item</label><select id="oi"><option>Design 884</option><option>Design 312</option><option>Design 205</option></select></div><div class="fld" style="flex:1"><label class="f" for="oq">Quantity</label><input id="oq" type="number" value="100"></div></div><div class="row"><button class="btn" data-a="save">Save order</button><button class="btn ghost" data-a="close">Cancel</button></div>`)}
+ else if(a==='save'){S.o.unshift({id:++S.id,c:$('#oc').value||'New customer',i:$('#oi').value+', '+$('#oq').value,s:0,days:0,h:['Received just now']});S.f='All';closeSheet();paint();say('Order saved. Customer told it was received')}
+}
+
+paintMenu();paint();
+
+    } catch (err) { if (window.console) console.error(err); }
+  }
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
