@@ -52,8 +52,40 @@
       h1 { font-size:30px !important; letter-spacing:-0.6px !important; }
       h2 { font-size:25px !important; }
     }
+
+@media (max-width:700px){
+ .pgrid{grid-template-columns:1fr 1fr !important;gap:10px !important}
+ .pgrid>.card{padding:14px !important}
+ .pgrid>.card>div:nth-child(4){display:none !important}
+ .pgrid>.card>div:nth-child(3){margin-bottom:6px !important;font-size:15px !important}
+ .pgrid>.card>a{font-size:12px !important;margin-top:6px !important}
+ .pintro{display:none !important}
+}
   </style>
 
+<style id="ai4-common">
+.acc>summary{list-style:none;display:block}.acc>summary::-webkit-details-marker{display:none}
+@media(min-width:701px){.acc>summary{pointer-events:none;cursor:default}}
+@media(max-width:700px){
+ .pacc{border-radius:16px !important;padding:0 !important;margin-bottom:12px !important}
+ .pacc>summary{cursor:pointer;padding:16px 46px 16px 18px;position:relative}
+ .pacc>summary .eyebrow{margin:0 !important}
+ .pacc>summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:600 24px/1 'Inter',sans-serif;color:#588C00}
+ .pacc[open]>summary:after{content:"\2212"}
+ .pacc>.accb{padding:0 18px 16px}
+ .two{grid-template-columns:1fr !important}
+}
+.hmb{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid #E3E0D6;border-radius:10px;background:#fff;cursor:pointer;flex:none;padding:0;margin-left:auto}
+@media(max-width:760px){
+ header.top{position:relative;flex-wrap:nowrap!important;align-items:center}
+ header.top .tag{display:none!important}
+ .hmb{display:flex}
+ .hnav{display:none!important;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #E7E4DB;border-radius:14px;box-shadow:0 18px 40px rgba(20,20,20,.14);padding:6px;flex-direction:column!important;align-items:stretch!important;gap:0!important;z-index:70}
+ .hnav.open{display:flex!important}
+ .hnav a{display:block!important;padding:14px 14px!important;border-bottom:1px solid #F0EEE6!important;color:#141414!important;font-size:15.5px!important;margin:0!important;border-radius:0!important;background:none!important}
+ .hnav a:last-child{border-bottom:0!important}
+}
+</style>
 </head>
 <body>
 
@@ -74,66 +106,66 @@
 
 
 
-<p style="font-family:'Inter',sans-serif; font-size:14px; color:#5A5D57; line-height:1.6; margin:0 0 18px 0;">The steps follow a customer through your business, from first enquiry to the client portal, the same order as on the home page. Open any one to try a working demo, see how different industries use it, and what it costs.</p>
+<p class="pintro" style="font-family:'Inter',sans-serif; font-size:14px; color:#5A5D57; line-height:1.6; margin:0 0 18px 0;">The processes follow a customer through your business, from first enquiry to the client portal, the same order as on the home page. Open any one to try a working demo, see how different industries use it, and what it costs.</p>
 <div class="pgrid" style="display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-bottom:48px;">
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #588C00; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #588C00;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 1</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 1</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#588C00; box-shadow:0 10px 22px rgba(88,140,0,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Lead Management</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Every enquiry is captured, assigned and followed up, and quiet leads are flagged.</div>
 <a href="lead-management.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#588C00; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #C99A2E; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #C99A2E;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 2</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 2</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#C99A2E; box-shadow:0 10px 22px rgba(201,154,46,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="3" width="14" height="18" rx="2"></rect><path d="M9 9h6"></path><path d="M9 13h6"></path><path d="M9 17h4"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Quotes and Invoices</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Pick items from your own list and share a clean PDF on WhatsApp. The total is worked out for you.</div>
 <a href="quotes-invoices.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#C99A2E; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #E8912D; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #E8912D;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 3</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 3</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#E8912D; box-shadow:0 10px 22px rgba(232,145,45,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"></path><path d="M3 8l9 5 9-5"></path><path d="M12 13v8"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Order Management</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Each order moves through your own stages, and the customer can be told at each one.</div>
 <a href="order-management.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#E8912D; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #1D6F42; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #1D6F42;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 4</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 4</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#1D6F42; box-shadow:0 10px 22px rgba(29,111,66,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><path d="M14 3v6h6"></path><path d="M9 15l2 2 4-4"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Document Collection</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">A checklist for each client, missing items asked for on WhatsApp, and files filed under the right client.</div>
 <a href="document-collection.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#1D6F42; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #7C5CBF; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #7C5CBF;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 5</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 5</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#7C5CBF; box-shadow:0 10px 22px rgba(124,92,191,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"></rect><rect x="14" y="3" width="7" height="7" rx="1.5"></rect><rect x="3" y="14" width="7" height="7" rx="1.5"></rect></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Task Tracking</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Every task has an owner and a due date. Each person sees their own, you see all.</div>
 <a href="task-tracking.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#7C5CBF; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #C2447A; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #C2447A;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 6</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 6</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#C2447A; box-shadow:0 10px 22px rgba(194,68,122,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Scheduled Messages</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Confirmations, reminders and offers go out on WhatsApp from templates, on their own schedule.</div>
 <a href="scheduled-messages.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#C2447A; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #D9455A; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #D9455A;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 7</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 7</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#D9455A; box-shadow:0 10px 22px rgba(217,69,90,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M9 8h6"></path><path d="M9 12h6"></path><path d="M10 8c4 0 4 5 0 5l4 4"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Payment Follow Up</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Pending amounts are listed by age, and polite reminders go out on WhatsApp.</div>
 <a href="payment-follow-up.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#D9455A; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #3B6FA6; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #3B6FA6;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 8</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 8</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#3B6FA6; box-shadow:0 10px 22px rgba(59,111,166,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Renewals and Daily Reports</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; flex-grow:1;">Renewal dates are flagged ahead of time, and a short summary reaches you every evening.</div>
 <a href="renewals-daily-report.html" style="display:inline-block; margin-top:14px; font-family:'Inter',sans-serif; font-size:13px; font-weight:600; color:#3B6FA6; text-decoration:none;">Try the demo and see details &#8594;</a>
 </div>
 <div class="card" style="padding:24px; display:flex; flex-direction:column; border-top:4px solid #7C5CBF; border-radius:16px; background:#FFFFFF; border:1px solid #E7E4DB; border-top:4px solid #7C5CBF;">
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Step 9</div>
+<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:10px;">Process 9</div>
 <div style="width:46px; height:46px; border-radius:12px; background:#7C5CBF; box-shadow:0 10px 22px rgba(124,92,191,0.38); display:flex; align-items:center; justify-content:center; margin-bottom:16px;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg></div>
 <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:17px; color:#141414; margin-bottom:8px; line-height:1.3;">Client Portal</div>
 <div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#6C6F69; line-height:1.6; margin-bottom:18px; ">Your customers are informed at every stage on a page of their own, so there are far fewer calls and no WhatsApp updates to type. They also accept quotes, upload documents and pay there.</div>
@@ -141,8 +173,8 @@
 </div>
 </div>
 
-<section style="padding:30px 32px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px; margin-bottom:36px;">
-<div class="eyebrow" style="margin-bottom:14px;">What decides where your price falls</div>
+<details class="acc pacc" open style="padding:30px 32px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px; margin-bottom:36px;">
+<summary><div class="eyebrow" style="margin-bottom:14px;">What decides where your price falls</div></summary><div class="accb">
 <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:24px; color:#141414; margin:0 0 10px 0; letter-spacing:-0.4px;">Two businesses can ask for the same process and need very different builds.</h2>
 <p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.65; margin:0 0 22px 0; max-width:700px;">A lead list for one salesperson is simple. A lead process with five departments, nine stages and a different follow up rule for every product is a different piece of work. Here is how we place you.</p>
 <div class="two" style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px;">
@@ -151,15 +183,15 @@
 <div style="padding:20px; border:1px solid #F0E2C0; background:#FBF3E3; border-radius:14px;"><div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:800; letter-spacing:1px; text-transform:uppercase; color:#C99A2E; margin-bottom:8px;">Complex</div><div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:16px; color:#141414; margin-bottom:10px;">Priced after a short call</div><ul style="margin:0; padding-left:18px; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.7;"><li>Four or more departments</li><li>Many stages or branches</li><li>Conditional follow ups and approvals</li><li>Several locations or user roles</li></ul></div>
 </div>
 <p style="font-family:'Inter',sans-serif; font-size:14px; color:#5A5D57; line-height:1.6; margin:20px 0 0 0;"><b style="color:#141414;">Not sure where you fall?</b> Tell me how many teams, stages and follow up rules you have today, and I will tell you which column you are in before you commit to anything.</p>
-</section>
+</div></details>
 
 <div class="two" style="display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-bottom:36px;">
-<section style="padding:28px 30px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px;">
-<div class="eyebrow" style="margin-bottom:14px;">Included in every price</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Setup in your own sheets, WhatsApp and tools, with your branding and your data</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Works on your phone, with nothing new for your team to learn</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>A training session for your team</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Three months of support after delivery</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Payment on delivery, with no advance</span></div></section>
-<section style="padding:28px 30px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px;">
-<div class="eyebrow" style="margin-bottom:14px; color:#C99A2E;">Quoted separately</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>Connecting to Tally or other software you already use</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>Reading documents such as PAN, Aadhaar or invoices into tables</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>A completely new module that is not on this list</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>WhatsApp message charges, which you pay directly at actual cost</span></div></section>
+<details class="acc pacc" open style="padding:28px 30px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px;">
+<summary><div class="eyebrow" style="margin-bottom:14px;">Included in every price</div></summary><div class="accb">
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Setup in your own sheets, WhatsApp and tools, with your branding and your data</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Works on your phone, with nothing new for your team to learn</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>A training session for your team</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Three months of support after delivery</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="color:#588C00; font-weight:700;">&#10003;</span><span>Payment on delivery, with no advance</span></div></div></details>
+<details class="acc pacc" open style="padding:28px 30px; background:#FFFFFF; border:1px solid #E7E4DB; border-radius:20px;">
+<summary><div class="eyebrow" style="margin-bottom:14px; color:#C99A2E;">Quoted separately</div></summary><div class="accb">
+<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>Connecting to Tally or other software you already use</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>Reading documents such as PAN, Aadhaar or invoices into tables</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>A completely new module that is not on this list</span></div><div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:14px; color:#3A3D36; line-height:1.55; margin-bottom:10px;"><span style="width:7px; height:7px; border-radius:50%; background:#C99A2E; margin-top:7px; flex-shrink:0;"></span><span>WhatsApp message charges, which you pay directly at actual cost</span></div></div></details>
 </div>
 
 <section style="padding:30px 32px; background:#FBF3E3; border:1px solid #F0E2C0; border-radius:20px; margin-bottom:56px; display:grid; grid-template-columns:1fr 1fr; gap:28px;" class="two">
@@ -195,6 +227,25 @@ window.__ai4Component=class Component extends DCLogic {
   }
   renderVals() { return {}; }
 }
+</script>
+<script>
+(function(){
+ function closeAll(){var c=document.getElementById('mn');if(c)c.checked=false;var n=document.querySelector('.hnav.open');if(n)n.classList.remove('open');var b=document.querySelector('.hmb');if(b)b.setAttribute('aria-expanded','false')}
+ window.addEventListener('pageshow',closeAll);window.addEventListener('hashchange',closeAll);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.navlinks a,.hnav a'))setTimeout(closeAll,0);else if(!t.closest('.navbar,.hmb,.hnav'))closeAll()},true);
+ document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('header.top');
+  if(h&&!document.getElementById('mn')){
+   var nav=h.querySelector('nav')||h.querySelector(':scope > span:last-child');
+   if(nav){nav.classList.add('hnav');var b=document.createElement('button');b.className='hmb';b.type='button';b.setAttribute('aria-label','Open menu');b.setAttribute('aria-expanded','false');
+    b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});h.appendChild(b)}}
+  var mq=window.matchMedia('(max-width:700px)');
+  function acc(){document.querySelectorAll('details.acc').forEach(function(d){d.open=!mq.matches})}
+  acc();if(mq.addEventListener)mq.addEventListener('change',acc);
+ });
+})();
 </script>
 </body>
 </html>

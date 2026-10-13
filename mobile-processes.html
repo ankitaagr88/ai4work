@@ -114,8 +114,62 @@ footer.page{margin-top:10px;border-top:1px solid var(--line);padding-top:14px;di
 a.back{font-weight:700;font-size:14px;color:#588C00;text-decoration:none}a.back:hover{color:#3f6b00}a.cta{display:inline-block;background:#588C00;color:#fff;font-weight:700;font-size:14px;border-radius:10px;padding:11px 20px;text-decoration:none}a.cta:hover{background:#3f6b00}
 @media(max-width:640px){.back{display:inline-block;padding:10px 0;font-size:14.5px}nav.tabs button{min-height:42px;padding-top:9px;padding-bottom:9px;font-size:14px}body{padding-bottom:84px}}
 
+
+.acc>summary{list-style:none;display:block;cursor:default}.acc>summary::-webkit-details-marker{display:none}
+.acc>summary h2{margin-bottom:6px}
+@media(min-width:701px){.acc>summary{pointer-events:none}}
+.pn{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 0;font-size:14px;font-weight:600}
+.pn a{display:inline-flex;align-items:center;gap:6px;color:#3A3D36;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;max-width:46%;line-height:1.25}
+.pn a:hover{border-color:var(--green);color:var(--greend)}
+.pn .c{font-size:12.5px;color:var(--soft);font-weight:700;letter-spacing:.5px}
+.pnb{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 8px}
+.pnb a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:#141414;font:700 15.5px/1.3 var(--head)}
+.pnb a small{display:block;font:700 11px var(--body);letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.pnb a:hover{border-color:var(--green)}.pnb .nx{text-align:right}
+@media(max-width:700px){
+ .acc{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0}
+ .acc>summary{cursor:pointer;padding:15px 46px 15px 16px;position:relative;-webkit-tap-highlight-color:transparent}
+ .acc>summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:600 24px/1 var(--body);color:var(--green)}
+ .acc[open]>summary:after{content:"\2212"}
+ .acc>summary h2,.acc>summary h2.big{margin:0;font-size:17px;line-height:1.3}
+ .acc>summary h2:before{display:none}
+ .acc>.accb,.acc>ul,.acc>.ptsw{padding:0 16px 16px}
+ .det{margin:0 0 20px}.det .sub2{display:none}
+ .cmp{border:0;border-radius:0}.cmp .r{grid-template-columns:1fr}.cmp .r.h{display:none}
+ .cmp .r>div{padding:9px 12px;font-size:14.5px}.cmp .a{background:#F1F4EC}
+ .det .bx{padding:14px 16px}.det .two2,.det .inds{gap:10px}
+ .pn a{max-width:48%}.pnb{grid-template-columns:1fr}
+ .hide-m{display:none!important}
+}
+.pnb{--accent:#588C00;--greend:#3f6b00;--soft:#8b8f86;--head:'Poppins','Segoe UI',sans-serif;--body:'Inter','Segoe UI',sans-serif}
+.pnb button{font:inherit;font-family:inherit;text-align:left;cursor:pointer;width:100%;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:#141414;font-weight:700}.pnb button.nx{text-align:right}
+.pnb{grid-template-columns:1fr 1fr}
+@media(max-width:700px){.pnb{grid-template-columns:1fr 1fr!important}.pnb a,.pnb button{padding:12px 12px;font-size:14px}}
 </style>
 
+<style id="ai4-common">
+.acc>summary{list-style:none;display:block}.acc>summary::-webkit-details-marker{display:none}
+@media(min-width:701px){.acc>summary{pointer-events:none;cursor:default}}
+@media(max-width:700px){
+ .pacc{border-radius:16px !important;padding:0 !important;margin-bottom:12px !important}
+ .pacc>summary{cursor:pointer;padding:16px 46px 16px 18px;position:relative}
+ .pacc>summary .eyebrow{margin:0 !important}
+ .pacc>summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:600 24px/1 'Inter',sans-serif;color:#588C00}
+ .pacc[open]>summary:after{content:"\2212"}
+ .pacc>.accb{padding:0 18px 16px}
+ .two{grid-template-columns:1fr !important}
+}
+.hmb{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid #E3E0D6;border-radius:10px;background:#fff;cursor:pointer;flex:none;padding:0;margin-left:auto}
+@media(max-width:760px){
+ header.top{position:relative;flex-wrap:nowrap!important;align-items:center}
+ header.top .tag{display:none!important}
+ .hmb{display:flex}
+ .hnav{display:none!important;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #E7E4DB;border-radius:14px;box-shadow:0 18px 40px rgba(20,20,20,.14);padding:6px;flex-direction:column!important;align-items:stretch!important;gap:0!important;z-index:70}
+ .hnav.open{display:flex!important}
+ .hnav a{display:block!important;padding:14px 14px!important;border-bottom:1px solid #F0EEE6!important;color:#141414!important;font-size:15.5px!important;margin:0!important;border-radius:0!important;background:none!important}
+ .hnav a:last-child{border-bottom:0!important}
+}
+</style>
 </head>
 <body>
 
@@ -426,12 +480,16 @@ function scr(id){
   `<div class="msg" style="align-self:stretch;max-width:100%;border-radius:12px"><b>Daily summary, 7:00 PM</b><br>New leads: 18<br>Follow ups done: 14 of 16<br>Orders approved: 9<br>Collected today: Rs 1,24,500<br>Pending dues: Rs 3,45,000<br>Renewals due this week: 3<small>7:00 PM</small></div>`)};
 }
 const DEMO={portal:'client-portal',lead:'lead-management',pay:'payment-follow-up',task:'task-tracking',order:'order-management',msg:'scheduled-messages',doc:'document-collection',quote:'quotes-invoices',ren:'renewals-daily-report'};
+function pn(){const i=P.findIndex(x=>x.id===cur),a=P[i-1],b=P[i+1];
+ return `<div class="pnb">${a?`<button class="pv" data-a="go" data-v="${a.id}"><small>Previous</small>${a.tab}</button>`:'<span></span>'}${b?`<button class="nx" data-a="go" data-v="${b.id}"><small>Next</small>${b.tab}</button>`:'<span></span>'}</div>`}
 function render(){
  const p=P.find(x=>x.id===cur),v=scr(cur),x=X[cur];
  document.querySelectorAll('#tabs button').forEach(b=>b.setAttribute('aria-selected',b.dataset.id===cur));
- $('#main').innerHTML=`<section><div class="k">Common process</div><h1>${p.h}</h1><p class="lead">${p.lead}</p><h2>What it does</h2><ul class="pts">${p.pts.map(x=>`<li>${x}</li>`).join('')}</ul><h2>Why it matters</h2>${x.why.map(t=>`<p class="para">${t}</p>`).join('')}<h2>Without it and with it</h2>${cmpT(cur)}<h2>How it works</h2><ol class="how">${x.how.map(t=>`<li>${t}</li>`).join('')}</ol><div class="eg"><b>Example</b>${x.ex}</div><h2>Used in</h2><div class="used">${p.used.map(x=>`<span>${x}</span>`).join('')}</div><p class="try">${p.try} The names and numbers are made up and nothing is saved.</p>${DEMO[cur]?`<p class="try"><a href="${DEMO[cur]}.html"><b>Open the full demo, industries and price &rarr;</b></a></p>`:''}</section>
+ $('#main').innerHTML=`<section><div class="k">Common process</div><h1>${p.h}</h1><p class="lead">${p.lead}</p><details class="acc" open><summary><h2>What it does</h2></summary><div class="accb"><ul class="pts">${p.pts.map(x=>`<li>${x}</li>`).join('')}</ul></div></details><details class="acc" open><summary><h2>Why it matters</h2></summary><div class="accb">${x.why.map(t=>`<p class="para">${t}</p>`).join('')}</div></details><details class="acc" open><summary><h2>Without it and with it</h2></summary><div class="accb">${cmpT(cur)}</div></details><details class="acc" open><summary><h2>How it works</h2></summary><div class="accb"><ol class="how">${x.how.map(t=>`<li>${t}</li>`).join('')}</ol><div class="eg"><b>Example</b>${x.ex}</div></div></details><details class="acc" open><summary><h2>Used in</h2></summary><div class="accb"><div class="used">${p.used.map(x=>`<span>${x}</span>`).join('')}</div></div></details><p class="try">${p.try} The names and numbers are made up and nothing is saved.</p>${DEMO[cur]?`<p class="try"><a href="${DEMO[cur]}.html"><b>Open the full demo, industries and price &rarr;</b></a></p>`:''}${pn()}</section>
  <aside class="stage"><div class="dev"><div class="scr"><div class="hd">${cur!=='home'?'<button class="bk" data-a="home">&lsaquo; Command centre</button>':''}<b>${v.t}</b><small>${v.sub}</small></div>${VAL[cur]?`<div class="val">${VAL[cur]}</div>`:''}<div class="body">${v.body}</div>${v.ft?`<div class="ft">${v.ft}</div>`:''}${toast?`<div class="toast" role="status">${toast}</div>`:''}</div></div></aside>`;
  try{history.replaceState(null,'','#'+cur)}catch(x){}
+ if(innerWidth<=700)document.querySelectorAll('#main details.acc').forEach(d=>d.open=false);
+ const at=document.querySelector('#tabs [aria-selected=true]');if(at&&at.scrollIntoView)try{at.scrollIntoView({inline:'center',block:'nearest'})}catch(x){}
 }
 $('#tabs').innerHTML=P.map(p=>`<button role="tab" data-id="${p.id}" aria-selected="false">${p.tab}</button>`).join('');
 $('#tabs').addEventListener('click',ev=>{const b=ev.target.closest('button');if(b){cur=b.dataset.id;toast='';render()}});
@@ -445,7 +503,7 @@ $('#main').addEventListener('click',ev=>{
  else if(a==='cu'){st.portal.u=1;st.portal.log.unshift(['Just now','Shah Traders uploaded the GST certificate']);say('Document received')}
  else if(a==='cp'){st.portal.p=1;st.portal.log.unshift(['Just now','Shah Traders paid Rs 92,500']);say('Payment received. Receipt added to your portal')}
  else if(a==='cask'){st.portal.log.unshift(['Just now','Shah Traders sent you a message in the portal']);say('Message sent. Replies appear in your portal')}
- else if(a==='go'){cur=v;toast='';render()}
+ else if(a==='go'){cur=v;toast='';render();window.scrollTo(0,0)}
  else if(a==='home'){cur='home';toast='';render()}
  else if(a==='hrep'){say('Summary sent to the owner on WhatsApp')}
  else if(a==='hx'){st.home.done[v]=1;if(v==='pay')st.pay.list.forEach(r=>r[3]=1);say({lead:'Nudge sent to Dev on WhatsApp',pay:'Reminders sent to all customers',task:'Nudge sent to Nisha',quote:'Follow ups sent on WhatsApp',doc:'Asked Patel Industries on WhatsApp',ren:'Reminder sent to Shah and Sons'}[v])}
@@ -473,6 +531,25 @@ const h=(location.hash||'').slice(1);if(P.some(x=>x.id===h))cur=h;render();
   }
   renderVals() { return {}; }
 }
+</script>
+<script>
+(function(){
+ function closeAll(){var c=document.getElementById('mn');if(c)c.checked=false;var n=document.querySelector('.hnav.open');if(n)n.classList.remove('open');var b=document.querySelector('.hmb');if(b)b.setAttribute('aria-expanded','false')}
+ window.addEventListener('pageshow',closeAll);window.addEventListener('hashchange',closeAll);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.navlinks a,.hnav a'))setTimeout(closeAll,0);else if(!t.closest('.navbar,.hmb,.hnav'))closeAll()},true);
+ document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('header.top');
+  if(h&&!document.getElementById('mn')){
+   var nav=h.querySelector('nav')||h.querySelector(':scope > span:last-child');
+   if(nav){nav.classList.add('hnav');var b=document.createElement('button');b.className='hmb';b.type='button';b.setAttribute('aria-label','Open menu');b.setAttribute('aria-expanded','false');
+    b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});h.appendChild(b)}}
+  var mq=window.matchMedia('(max-width:700px)');
+  function acc(){document.querySelectorAll('details.acc').forEach(function(d){d.open=!mq.matches})}
+  acc();if(mq.addEventListener)mq.addEventListener('change',acc);
+ });
+})();
 </script>
 </body>
 </html>

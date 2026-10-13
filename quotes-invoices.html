@@ -145,8 +145,58 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .cmp .h .wo{background:#F8E2DF;color:#B4372C}.cmp .h .wi{background:#DDEFC6;color:#3f6b00}
 .cmp .x{color:#B4372C;font-weight:800;margin-right:6px}.cmp .ok{color:#3f6b00;font-weight:800;margin-right:6px}
 @media(max-width:640px){.cmp .r{grid-template-columns:1fr 1fr}.cmp .r>.a{grid-column:1/-1;padding-bottom:4px}.cmp .r.h>.a{display:none}.cmp .r>div{font-size:14.5px}}
+
+.acc>summary{list-style:none;display:block;cursor:default}.acc>summary::-webkit-details-marker{display:none}
+.acc>summary h2{margin-bottom:6px}
+@media(min-width:701px){.acc>summary{pointer-events:none}}
+.pn{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:14px 0 0;font-size:14px;font-weight:600}
+.pn a{display:inline-flex;align-items:center;gap:6px;color:#3A3D36;background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 14px;max-width:46%;line-height:1.25}
+.pn a:hover{border-color:var(--green);color:var(--greend)}
+.pn .c{font-size:12.5px;color:var(--soft);font-weight:700;letter-spacing:.5px}
+.pnb{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0 8px}
+.pnb a{display:block;background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;color:#141414;font:700 15.5px/1.3 var(--head)}
+.pnb a small{display:block;font:700 11px var(--body);letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:3px}
+.pnb a:hover{border-color:var(--green)}.pnb .nx{text-align:right}
+@media(max-width:700px){
+ .acc{background:#fff;border:1px solid var(--line);border-radius:14px;margin:10px 0}
+ .acc>summary{cursor:pointer;padding:15px 46px 15px 16px;position:relative;-webkit-tap-highlight-color:transparent}
+ .acc>summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:600 24px/1 var(--body);color:var(--green)}
+ .acc[open]>summary:after{content:"\2212"}
+ .acc>summary h2,.acc>summary h2.big{margin:0;font-size:17px;line-height:1.3}
+ .acc>summary h2:before{display:none}
+ .acc>.accb,.acc>ul,.acc>.ptsw{padding:0 16px 16px}
+ .det{margin:0 0 20px}.det .sub2{display:none}
+ .cmp{border:0;border-radius:0}.cmp .r{grid-template-columns:1fr}.cmp .r.h{display:none}
+ .cmp .r>div{padding:9px 12px;font-size:14.5px}.cmp .a{background:#F1F4EC}
+ .det .bx{padding:14px 16px}.det .two2,.det .inds{gap:10px}
+ .pn a{max-width:48%}.pnb{grid-template-columns:1fr}
+ .hide-m{display:none!important}
+}
 </style>
 
+<style id="ai4-common">
+.acc>summary{list-style:none;display:block}.acc>summary::-webkit-details-marker{display:none}
+@media(min-width:701px){.acc>summary{pointer-events:none;cursor:default}}
+@media(max-width:700px){
+ .pacc{border-radius:16px !important;padding:0 !important;margin-bottom:12px !important}
+ .pacc>summary{cursor:pointer;padding:16px 46px 16px 18px;position:relative}
+ .pacc>summary .eyebrow{margin:0 !important}
+ .pacc>summary:after{content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);font:600 24px/1 'Inter',sans-serif;color:#588C00}
+ .pacc[open]>summary:after{content:"\2212"}
+ .pacc>.accb{padding:0 18px 16px}
+ .two{grid-template-columns:1fr !important}
+}
+.hmb{display:none;width:44px;height:44px;align-items:center;justify-content:center;border:1px solid #E3E0D6;border-radius:10px;background:#fff;cursor:pointer;flex:none;padding:0;margin-left:auto}
+@media(max-width:760px){
+ header.top{position:relative;flex-wrap:nowrap!important;align-items:center}
+ header.top .tag{display:none!important}
+ .hmb{display:flex}
+ .hnav{display:none!important;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid #E7E4DB;border-radius:14px;box-shadow:0 18px 40px rgba(20,20,20,.14);padding:6px;flex-direction:column!important;align-items:stretch!important;gap:0!important;z-index:70}
+ .hnav.open{display:flex!important}
+ .hnav a{display:block!important;padding:14px 14px!important;border-bottom:1px solid #F0EEE6!important;color:#141414!important;font-size:15.5px!important;margin:0!important;border-radius:0!important;background:none!important}
+ .hnav a:last-child{border-bottom:0!important}
+}
+</style>
 </head>
 <body>
 
@@ -154,10 +204,11 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 <div class="wrap">
 <header class="top"><a class="mark" href="index.html"><span class="a">ai</span><span class="f">4</span><span class="w">work</span></a>
 <nav class="links"><a href="Pricing.html">&larr; All processes</a><a href="index.html">Home</a><a href="mobile-processes.html#home">See it working</a><a href="dashboards.html">Industries</a><a href="UseCases.html">Real problems</a><a href="index.html#contact">Contact</a><a href="index.html#contact" style="color:#588C00">Let's Talk</a></nav></header>
+<div class="pn" id="pntop"><a href="lead-management.html">&larr; Lead management</a><span class="c hide-m">2 of 9</span><a href="order-management.html">Order management &rarr;</a></div>
 <main>
-<section><div class="k">Step 2 of 9</div><h1>Quotes and invoices</h1><p class="lead">Pick items from your own list, set the quantity, and the total is worked out for you. A clean PDF goes to the customer on WhatsApp before they have left your shop.</p>
-<h2>What the owner sees on this screen</h2><ul class="pts"><li>Every quote the team has sent this week, with who sent it and its value</li><li>Quotes that were viewed but not accepted, with a one tap follow up</li><li>Accepted value and quotes still waiting, at the top</li><li>Items and rates come from one list that only you control</li><li>Open New quote when you want to send one yourself</li></ul>
-<a class="cta" href="index.html#contact">Talk about this process</a>
+<section><div class="k">Common process 2 of 9</div><h1>Quotes and invoices</h1><p class="lead">Pick items from your own list, set the quantity, and the total is worked out for you. A clean PDF goes to the customer on WhatsApp before they have left your shop.</p>
+<details class="acc own" open><summary><h2>What the owner sees on this screen</h2></summary><div class="ptsw"><ul class="pts"><li>Every quote the team has sent this week, with who sent it and its value</li><li>Quotes that were viewed but not accepted, with a one tap follow up</li><li>Accepted value and quotes still waiting, at the top</li><li>Items and rates come from one list that only you control</li><li>Open New quote when you want to send one yourself</li></ul></div></details>
+<a class="cta hide-m" href="index.html#contact">Talk about this process</a>
 <p class="try">Try it: follow up on a viewed quote, then open New quote and share one. Example data only. Nothing here is saved.</p></section>
 <aside class="stage"><div class="dev"><div class="scr">
 <div class="hd"><button class="ibtn" data-a="menu" aria-label="Open menu"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><div class="tt"><b id="t"></b><small id="s"></small></div><span class="av">A</span></div>
@@ -169,23 +220,28 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 </div></div></aside>
 </main>
 <section class="det">
-<h2 class="big">Without it and with it</h2>
+<details class="acc" open><summary><h2 class="big">Without it and with it</h2></summary><div class="accb">
 <p class="sub2">The same day in your business, before and after.</p>
 <div class="cmp" role="table" aria-label="Without it and with it"><div class="r h" role="row"><div class="a"></div><div class="wo">Without it</div><div class="wi">With it</div></div><div class="r"><div class="a">Making a quote</div><div class="wo"><span class="x">&#10005;</span>Built slowly in a spreadsheet, often by the owner</div><div class="wi"><span class="ok">&#10003;</span>Pick items and the total is worked out, in about two minutes</div></div><div class="r"><div class="a">Rates</div><div class="wo"><span class="x">&#10005;</span>Two people quote different rates for the same item</div><div class="wi"><span class="ok">&#10003;</span>One rate list, updated once for everyone</div></div><div class="r"><div class="a">Sending</div><div class="wo"><span class="x">&#10005;</span>Typed into a chat, or sent later</div><div class="wi"><span class="ok">&#10003;</span>A clean PDF shared on WhatsApp in one tap</div></div><div class="r"><div class="a">Follow up</div><div class="wo"><span class="x">&#10005;</span>Nobody knows which quotes were seen</div><div class="wi"><span class="ok">&#10003;</span>Viewed but not accepted quotes are flagged, with a one tap follow up</div></div></div>
-<h2 class="big">How it helps you organise and save time</h2>
+</div></details>
+<details class="acc" open><summary><h2 class="big">How it helps you organise and save time</h2></summary><div class="accb">
 <p class="sub2">What changes for you and your team once quotes and invoices runs this way.</p>
 <div class="two2"><div class="bx"><h3>How it organises your work</h3><ul><li>One item and rate list for the whole team, updated once</li><li>Every quote saved with who sent it and where it stands</li><li>See which quotes were viewed but not accepted</li></ul></div><div class="bx"><h3>How it saves time</h3><ul><li>A quote is ready in about two minutes and goes out as a PDF on WhatsApp</li><li>Totals and GST are worked out for you, so no checking by hand</li><li>Follow up on open quotes in one tap</li></ul></div></div>
-<h2 class="big">How different industries can use it</h2>
+</div></details>
+<details class="acc" open><summary><h2 class="big">How different industries can use it</h2></summary><div class="accb">
 <p class="sub2">The same process, shaped around how each business works.</p>
 <div class="inds"><div class="ind"><b>Textile and embroidery</b><span>Rates by design and metre, quoted at the buyer’s shop</span></div><div class="ind"><b>Furniture and interiors</b><span>Item based quotes with sizes and finishes</span></div><div class="ind"><b>Events and weddings</b><span>Package quotes with add ons and revisions</span></div><div class="ind"><b>Contractors and construction</b><span>Work item quotes with quantities</span></div><div class="ind"><b>Electricals and batteries</b><span>Dealer rates, discounts and stock based quotes</span></div><div class="ind"><b>Coaches and trainers</b><span>Programme quotes and invoices after enrolment</span></div></div>
-<h2 class="big">What affects the price</h2>
+</div></details>
+<details class="acc" open><summary><h2 class="big">What affects the price</h2></summary><div class="accb">
 <p class="sub2">The starting price is for the process as shown on this page. These are the things that move it.</p>
 <div class="pcard"><div><small>Starting from, one time</small><div class="pp">&#8377;14,200</div><p>No subscription and no monthly fee to us. Payment on delivery, with no advance. Setup with your branding and your data, a training session and three months of support are included.</p></div>
 <div><small>The price depends on</small><ul style="margin:8px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:7px"><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>How many item lists and rate cards you keep</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Discount rules and approvals before a quote goes out</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>GST variations and invoice formats</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Quote versions and revisions</li><li style="padding-left:16px;position:relative;font-size:15px"><span style="position:absolute;left:0;top:.6em;width:7px;height:7px;border-radius:2px;background:var(--accent)"></span>Linking an accepted quote to an order</li></ul>
 <div class="tiers"><div><b>Simple</b>One team, up to 5 stages, one follow up rule. Starting price.</div><div><b>Typical</b>Two or three teams, 6 to 8 stages, a few rules. Starting price plus tailoring.</div><div><b>Complex</b>Four or more departments, many stages and conditions. Priced after a short call.</div></div></div></div>
+</div></details>
 <p style="margin-top:20px"><a class="cta" href="index.html#contact">Tell me how your business works, and I will place you</a> <a href="Pricing.html" style="margin-left:14px;font-weight:700;color:var(--greend)">See all processes &rarr;</a></p>
 </section>
 
+<div class="pnb"><a class="pv" href="lead-management.html"><small>Previous process</small>Lead management</a><a class="nx" href="order-management.html"><small>Next process</small>Order management</a></div>
 <footer class="page"><span>Ankitaa S Goyal &middot; Business Process Consultant &middot; +91 96620 36811 &middot; ankitaa@ai4work.in</span><span class="credit">created by <span class="mark"><span class="a">ai</span><span class="f">4</span><span class="w">work</span></span></span></footer>
 </div>
 <div style="max-width:1100px; margin:8px auto 0; padding:18px 0 0; font-family:'Inter',sans-serif;"><div style="font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#8B8F86; margin-bottom:8px;">Other processes</div><div style="display:flex; flex-wrap:wrap; gap:8px;"><a href="lead-management.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Lead management</a><a href="order-management.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Order management</a><a href="document-collection.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Document collection</a><a href="task-tracking.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Task tracking</a><a href="scheduled-messages.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Scheduled messages</a><a href="payment-follow-up.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Payment follow up</a><a href="renewals-daily-report.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Renewals and daily report</a><a href="client-portal.html" style="font-size:14px; font-weight:600; color:#3A3D36; background:#FFFFFF; border:1px solid #E4E8DF; border-radius:999px; padding:9px 14px;">Client portal</a></div></div>
@@ -266,6 +322,25 @@ paintMenu();paint();
   }
   renderVals() { return {}; }
 }
+</script>
+<script>
+(function(){
+ function closeAll(){var c=document.getElementById('mn');if(c)c.checked=false;var n=document.querySelector('.hnav.open');if(n)n.classList.remove('open');var b=document.querySelector('.hmb');if(b)b.setAttribute('aria-expanded','false')}
+ window.addEventListener('pageshow',closeAll);window.addEventListener('hashchange',closeAll);
+ document.addEventListener('keydown',function(e){if(e.key==='Escape')closeAll()});
+ document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.navlinks a,.hnav a'))setTimeout(closeAll,0);else if(!t.closest('.navbar,.hmb,.hnav'))closeAll()},true);
+ document.addEventListener('DOMContentLoaded',function(){
+  var h=document.querySelector('header.top');
+  if(h&&!document.getElementById('mn')){
+   var nav=h.querySelector('nav')||h.querySelector(':scope > span:last-child');
+   if(nav){nav.classList.add('hnav');var b=document.createElement('button');b.className='hmb';b.type='button';b.setAttribute('aria-label','Open menu');b.setAttribute('aria-expanded','false');
+    b.innerHTML='<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>';
+    b.addEventListener('click',function(){var o=nav.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')});h.appendChild(b)}}
+  var mq=window.matchMedia('(max-width:700px)');
+  function acc(){document.querySelectorAll('details.acc').forEach(function(d){d.open=!mq.matches})}
+  acc();if(mq.addEventListener)mq.addEventListener('change',acc);
+ });
+})();
 </script>
 </body>
 </html>
