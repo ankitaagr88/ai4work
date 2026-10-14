@@ -88,7 +88,30 @@
  #what-we-do>p{display:none !important}
  #what-we-do h2{font-size:26px !important}
 }
-  </style>
+  
+    @media (min-width: 761px) and (max-width: 920px) {
+      .grid3.siw { grid-template-columns:repeat(3,minmax(0,1fr)) !important; gap:12px !important; }
+      .grid3.siw > .card { padding:16px !important; }
+      .grid3.siw > .card > div:first-child { transform:scale(.8); transform-origin:left bottom; margin-bottom:8px !important; }
+    }
+    @media (min-width: 761px) and (max-width: 1024px) {
+      .hero-sec { padding:32px 28px !important; }
+      .hero-wrap { grid-template-columns:minmax(0,1fr) 270px !important; gap:20px !important; }
+      .hero-sec h1 { font-size:34px !important; letter-spacing:-1px !important; }
+      .hero-vis { width:270px !important; height:calc(440px * .52) !important; overflow:visible; position:relative; }
+      .hero-vis > div { position:absolute; left:50%; top:0; width:520px; height:440px; margin:0 0 0 -260px !important; transform:scale(.52); transform-origin:top center; }
+    }
+    @media (min-width: 1025px) {
+      .hero-sec { padding:40px 48px !important; margin:24px 0 40px 0 !important; }
+      .hero-wrap { grid-template-columns:minmax(0,1fr) 360px !important; gap:32px !important; }
+      .hero-sec h1 { font-size:44px !important; letter-spacing:-1.2px !important; }
+      .hero-vis { width:360px !important; height:calc(440px * .68) !important; overflow:visible; position:relative; }
+      .hero-vis > div { position:absolute; left:50%; top:0; width:520px; height:440px; margin:0 0 0 -260px !important; transform:scale(.68); transform-origin:top center; }
+    }
+
+    @media (max-width: 1024px) { .usp { grid-template-columns:repeat(2,minmax(0,1fr)) !important; } }
+    @media (max-width: 560px) { .usp { grid-template-columns:1fr !important; } }
+</style>
 
 <style id="ai4-common">
 .ai4d-scrim{display:none}.ai4-fab{display:none}
@@ -450,7 +473,7 @@ body.direct .stage{margin-top:6px}
 
 <!-- ============ NAV ============ -->
 <div class="navbar" style="display:flex; align-items:center; justify-content:space-between; padding:26px 0; position:sticky; top:0; background:rgba(255,255,255,0.94); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px); z-index:10; border-bottom:1px solid #EFEDE5;">
-<a href="index.html" aria-label="ai4work home"><img src="assets/ai4work-logo.png" alt="ai4work" style="height:26px; width:auto;"></a>
+<a href="index.html" aria-label="ai4work home" style="display:flex; flex-direction:column; gap:5px; text-decoration:none;"><img src="assets/ai4work-logo.png" alt="ai4work" style="height:26px; width:auto; align-self:flex-start;"><span style="font-family:'Inter',sans-serif; font-size:11px; font-weight:500; color:#8B8F86; letter-spacing:0.2px; line-height:1.2; white-space:nowrap;">Process Organisation &amp; Automation</span></a>
 <input type="checkbox" id="mn" class="mn-cb" aria-label="Menu"><label for="mn" class="mn-btn" aria-label="Open menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></label>
 <div class="navlinks" style="display:flex; align-items:center; gap:26px;">
 <a class="navlink" href="#top" aria-current="page" style="color:#588C00;">Home</a>
@@ -467,14 +490,12 @@ body.direct .stage{margin-top:6px}
 <section class="dots-bg hero-sec" style="margin:28px 0 48px 0; padding:56px 48px; background:#F5F9EF; border-radius:32px; border:1px solid #E3EFD5;">
 <div class="hero-wrap" style="display:grid; grid-template-columns:1.15fr 0.85fr; gap:48px; align-items:center;">
 <div>
-<div class="eyebrow" style="margin-bottom:20px;">Business Process Organisation &amp; Automation</div>
 <h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:54px; color:#141414; margin:0 0 4px 0; letter-spacing:-1.6px; line-height:1.08;">Your Team Shouldn't Have to Remember Everything.</h1>
 <h1 style="font-family:'Poppins',sans-serif; font-weight:800; font-size:54px; color:#588C00; margin:0 0 24px 0; letter-spacing:-1.6px; line-height:1.08;">Your Processes Should.</h1>
-<p style="font-family:'Inter',sans-serif; font-size:16.5px; color:#5A5D57; line-height:1.7; margin:0 0 30px 0; max-width:480px;">We help small and medium businesses organise and automate repetitive work using the tools they already use.</p>
+<p style="font-family:'Inter',sans-serif; font-size:16.5px; color:#5A5D57; line-height:1.7; margin:0 0 30px 0; max-width:480px;">We help small and medium businesses organise and automate repetitive work using the tools they already use. Choose from 10 ready solutions, customised to fit you.</p>
 <div style="display:flex; gap:12px; flex-wrap:wrap;">
-<a class="btn-primary" href="#contact">Find Your Process Bottleneck</a>
-<a class="btn-outline" href="#what-we-do">See What We Can Automate</a>
-<a href="https://wa.me/919662036811?text=Hi%20Ankitaa%2C%20I%20was%20looking%20at%20your%20website%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:9px; background:#25D366; color:#FFFFFF; font-family:'Inter',sans-serif; font-weight:700; font-size:14px; border-radius:10px; padding:12px 20px; text-decoration:none;"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FFFFFF" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.7-.8-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.5-2.3-1.4-.9-.8-1.4-1.7-1.6-2-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5-.1-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> Chat on WhatsApp</a>
+<a class="btn-primary" href="#ready-solutions">Explore Ready Solutions</a>
+<a class="btn-outline" href="#who-we-help">See Who We Help</a>
 </div>
 </div>
 
@@ -566,38 +587,39 @@ body.direct .stage{margin-top:6px}
 
 <!-- ============ THE PROBLEM ============ -->
 <section style="padding:8px 0 48px 0;">
-<div class="grid2" style="display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center;">
+<div class="grid2" style="display:grid; grid-template-columns:minmax(0,760px); gap:56px; align-items:center;">
 <div>
 <div class="eyebrow" style="margin-bottom:14px;">The Problem</div>
 <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#141414; margin:0 0 18px 0; letter-spacing:-0.4px; line-height:1.3;">Your business isn't disorganised. Your processes are just doing too much manually.</h2>
 <p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.75; margin:0 0 14px 0;">A lead comes in on WhatsApp. Someone remembers to follow up. A document is requested over email. Someone updates Excel. A payment date approaches. Someone sends a reminder.</p>
-<p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.75; margin:0 0 14px 0;">The work gets done, but too much of it depends on people remembering, copying, forwarding and following up.</p>
+<p style="font-family:'Inter',sans-serif; font-size:14.5px; color:#5A5D57; line-height:1.75; margin:0 0 14px 0; text-wrap:pretty;">The work gets done, but too much of it depends on people remembering, copying, forwarding and following up.</p>
 <p style="font-family:'Inter',sans-serif; font-size:15px; color:#141414; font-weight:600; line-height:1.7; margin:0;">That's where we come in.</p>
 </div>
 
-<div style="position:relative; width:100%; height:300px;">
-  <div style="position:absolute; left:0; top:0; width:44%; height:300px; box-sizing:border-box; padding:20px; background:#FAFAF8; border:1px solid #E7E4DB; border-radius:16px;">
-    <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#8B8F86; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">Before ai4work</div>
-    <div style="display:flex; flex-direction:column; gap:10px; font-family:'Inter',sans-serif; font-size:13px; color:#5A5D57;">
-      <div>WhatsApp</div><div>Excel</div><div>Email</div><div>Documents</div><div>Payments</div><div>Memory</div>
-    </div>
-  </div>
-  <svg width="40" height="8" viewBox="0 0 40 8" style="position:absolute; left:calc(44% + 4px); top:146px; overflow:visible; fill:none; stroke:#B9B6AB; stroke-width:2; stroke-linecap:round"><defs><marker id="dc-arrow-head-filled-3" orient="auto" markerWidth="6" markerHeight="6" refX="3.2" refY="2" overflow="visible"><path d="M0 0 L4 2 L0 4 Z" fill="#588C00" stroke="none"/></marker></defs><path d="M 0 4 L 36 4" marker-end="url(#dc-arrow-head-filled-3)" style="stroke:#588C00"></path></svg>
-  <div style="position:absolute; right:0; top:0; width:52%; height:300px; box-sizing:border-box; padding:20px; background:#F5F9EF; border:1px solid #D8ECC0; border-radius:16px;">
-    <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:14px;">After ai4work</div>
-    <div style="display:flex; flex-direction:column; gap:10px; font-family:'Inter',sans-serif; font-size:13px; color:#3f6b00; font-weight:600;">
-      <div>✓ Enquiry received</div><div>✓ Lead recorded</div><div>✓ Follow up scheduled</div><div>✓ Reminder sent</div><div>✓ Status updated</div><div>✓ Team sees what's next</div>
-    </div>
-  </div>
 </div>
+</section>
+
+<!-- ============ THE AI4WORK DIFFERENCE ============ -->
+<section id="how-it-works" style="padding:40px 40px; background:#FBFAF6; border:1px solid #EFEBDD; border-radius:28px; margin-bottom:48px;">
+<div class="eyebrow" style="margin-bottom:14px;">How It Works</div>
+<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:30px; color:#141414; margin:0 0 28px 0; letter-spacing:-0.6px; max-width:none;">Four simple steps, and we handle all of them.</h2>
+<div class="grid4" style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; position:relative;">
+<div style="text-align:center;"><div style="width:40px; height:40px; border-radius:50%; background:#4A90D9; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; box-shadow:0 8px 16px rgba(74,144,217,0.35);">1</div><div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Understand</div><div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#5A5D57; line-height:1.45;">We learn how your work runs today</div></div>
+<div style="text-align:center;"><div style="width:40px; height:40px; border-radius:50%; background:#E8912D; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; box-shadow:0 8px 16px rgba(232,145,45,0.35);">2</div><div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Organise</div><div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#5A5D57; line-height:1.45;">We set it up as one clear process</div></div>
+<div style="text-align:center;"><div style="width:40px; height:40px; border-radius:50%; background:#8B5FBF; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; box-shadow:0 8px 16px rgba(139,95,191,0.35);">3</div><div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Automate</div><div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#5A5D57; line-height:1.45;">We automate the repeated steps</div></div>
+<div style="text-align:center;"><div style="width:40px; height:40px; border-radius:50%; background:#588C00; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 12px auto; box-shadow:0 8px 16px rgba(88,140,0,0.35);">4</div><div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Hand over</div><div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#5A5D57; line-height:1.45;">Your team starts using it, with training</div></div>
 </div>
+<div style="margin-top:24px; padding-top:18px; border-top:1px solid #EFEBDD; font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#3A3D36; line-height:1.5;">It runs on tools you already use, including: Google Sheets, Excel, WhatsApp and email.</div>
 </section>
 
 <!-- ============ WHAT WE DO ============ -->
 <section id="what-we-do" style="padding:48px 40px; background:#FFFFFF; border:1px solid #EFEDE5; border-radius:28px; box-shadow:0 20px 48px rgba(20,20,20,0.05); margin-bottom:48px;">
 <div class="eyebrow" style="margin-bottom:14px;">What We Do</div>
 <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:32px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.6px;">We turn repetitive work into organised processes.</h2>
-<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 36px 0; max-width:620px;">We look at how your business actually works, identify where time is being lost, and organise the process around the tools your team already knows. The steps below follow a customer through your business, from first enquiry to renewal, and the portal lets your customers see it too. Tap any process to see it working on a phone.</p>
+<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 36px 0; max-width:620px;">Ready-made solutions for the work your team repeats every day, customised to fit your business.</p>
+<div class="eyebrow" style="margin:0 0 12px 0;">Why ai4work</div>
+<div class="usp" style="display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; margin:0 0 36px 0;"><div style="padding:16px 18px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:14px;"><div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:#141414; margin:0 0 6px 0;">Ready, then made yours</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#5A5D57; line-height:1.55;">Each process is already built and tested. We customise it to your steps, your branding and your tools, so you start fast.</div></div><div style="padding:16px 18px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:14px;"><div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:#141414; margin:0 0 6px 0;">Nothing new to learn</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#5A5D57; line-height:1.55;">It looks and works like Google Sheets and WhatsApp, so your team uses it from day one.</div></div><div style="padding:16px 18px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:14px;"><div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:#141414; margin:0 0 6px 0;">In your team's language</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#5A5D57; line-height:1.55;">We set it up in English, Hindi or any language your staff are comfortable with.</div></div><div style="padding:16px 18px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:14px;"><div style="font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; color:#141414; margin:0 0 6px 0;">Simple to own</div><div style="font-family:'Inter',sans-serif; font-size:13.5px; color:#5A5D57; line-height:1.55;">Pay once. No monthly fee to us, and training plus three months of support are included.</div></div></div>
+<div id="ready-solutions" style="scroll-margin-top:80px; font-family:'Poppins',sans-serif; font-weight:700; font-size:19px; color:#141414; line-height:1.35; max-width:560px; margin:0 0 20px 0;">10 ready-to-use solutions. Pick one, and we make it yours.</div>
 
 <div class="wwd" style="display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px;">
 
@@ -680,14 +702,6 @@ body.direct .stage{margin-top:6px}
 <div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">Try the demo &rarr;</div>
 </a>
 
-<a href="mobile-processes.html#home" class="card wc" style="grid-column:1/-1; padding:16px; border-top:4px solid #141414; border-radius:16px; background:#F5F9EF; display:flex; flex-direction:column; text-decoration:none;">
-<div class="icon-badge" style="background:#141414; margin-bottom:16px; box-shadow:0 10px 22px rgba(20,20,20,0.38);"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><g stroke-width="1.7"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="2" fill="#fff" fill-opacity=".3"></rect><rect x="13" y="3.5" width="7.5" height="7.5" rx="2"></rect><rect x="3.5" y="13" width="7.5" height="7.5" rx="2"></rect><rect x="13" y="13" width="7.5" height="7.5" rx="2" fill="#fff" fill-opacity=".3"></rect></g></svg></div>
-<div style="font-family:'Inter',sans-serif; font-weight:800; font-size:11px; color:#141414; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Everything together</div>
-<div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:15.5px; color:#141414; margin-bottom:8px;">All of it in one command centre</div>
-<div style="font-family:'Inter',sans-serif; font-size:13px; color:#6C6F69; line-height:1.6; flex-grow:1; margin-bottom:12px;">The owner's home screen: what needs you today, what each person is doing, every process at a glance.</div>
-<div style="font-family:'Inter',sans-serif; font-weight:700; font-size:12.5px; color:#588C00;">Open the command centre &rarr;</div>
-</a>
-
 </div>
 </section>
 
@@ -698,7 +712,7 @@ body.direct .stage{margin-top:6px}
 <p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 32px 0; max-width:640px;">Everything below uses example data. Tap around, or read how other businesses got out of the same mess you may be in.</p>
 </section>
 
-<div class="grid3" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:20px;">
+<div class="grid3 siw" style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-bottom:20px;">
 <a href="mobile-processes.html#home" class="card" style="padding:26px; display:flex; flex-direction:column; border-top:4px solid #588C00; border-radius:20px; background:#F5F9EF;">
 <div style="display:flex; align-items:flex-end; gap:14px; height:150px; margin-bottom:22px;">
 <div style="width:96px; height:150px; background:#1E2615; border-radius:20px; padding:6px; box-sizing:border-box; box-shadow:0 14px 28px rgba(30,38,21,0.25);"><div style="background:#FFFFFF; border-radius:15px; height:100%; overflow:hidden;"><div style="background:#588C00; height:26px;"></div><div style="margin:7px 6px 0 6px; height:16px; border-radius:6px; background:#EEF5E2;"></div><div style="margin:6px 6px 0 6px; height:16px; border-radius:6px; background:#EEF5E2;"></div><div style="margin:6px 6px 0 6px; height:16px; border-radius:6px; background:#FBEFD9;"></div></div></div>
@@ -743,8 +757,8 @@ body.direct .stage{margin-top:6px}
 
 
 <!-- ============ WHO WE HELP ============ -->
-<section id="who-we-help" style="padding:48px 40px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:28px; margin-bottom:48px;">
-<div class="grid2" style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:48px; align-items:start;">
+<section id="who-we-help" style="scroll-margin-top:80px; padding:48px 40px; background:#F5F9EF; border:1px solid #E3EFD5; border-radius:28px; margin-bottom:48px;">
+<div class="grid2" style="display:grid; grid-template-columns:minmax(0,1fr); gap:48px; align-items:start;">
 <div>
 <div class="eyebrow" style="margin-bottom:14px;">Who We Help</div>
 <h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:28px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.4px; line-height:1.3;">If your team spends too much time doing the same thing repeatedly, let's talk.</h2>
@@ -761,61 +775,6 @@ body.direct .stage{margin-top:6px}
 </div>
 </div>
 
-<div class="card" style="padding:24px 20px; background:#F5F9EF; border-color:#D8ECC0;">
-<div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:16px;">Is ai4work Right For You?</div>
-<div style="display:flex; flex-direction:column; gap:12px; margin-bottom:22px;">
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Your team repeats the same task daily</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Important info is spread across tools</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>Follow ups depend on people remembering</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>You copy information between tools</div>
-<div style="display:flex; gap:10px; align-items:flex-start; font-family:'Inter',sans-serif; font-size:13.5px; color:#3A3D36; line-height:1.5;"><span style="color:#588C00; font-weight:700;">✓</span>You want better organisation, not a big IT system</div>
-</div>
-<a class="btn-primary" href="#how-it-works" style="width:100%; box-sizing:border-box; text-align:center;">See How It Works</a>
-</div>
-</div>
-</section>
-
-<!-- ============ THE AI4WORK DIFFERENCE ============ -->
-<section id="how-it-works" style="padding:48px 40px; background:#FBFAF6; border:1px solid #EFEBDD; border-radius:28px; margin-bottom:48px;">
-<div class="eyebrow" style="margin-bottom:14px;">How It Works</div>
-<h2 style="font-family:'Poppins',sans-serif; font-weight:700; font-size:32px; color:#141414; margin:0 0 12px 0; letter-spacing:-0.6px; max-width:620px;">We don't start with technology. We start with your actual problem.</h2>
-<p style="font-family:'Inter',sans-serif; font-size:15px; color:#5A5D57; line-height:1.6; margin:0 0 40px 0; max-width:600px;">Four simple steps. You don't need another complicated software system. You need your existing tools to make more sense.</p>
-
-<div class="steps-wrap" style="position:relative; width:100%; height:110px;">
-  <svg class="steps-line" width="100%" height="2" style="position:absolute; left:0; top:19px; overflow:visible;"><line x1="20" y1="1" x2="98%" y2="1" stroke="#E7E4DB" stroke-width="2"></line></svg>
-  <div class="grid4" style="display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; position:relative;">
-    <div style="text-align:center;">
-      <div style="width:40px; height:40px; border-radius:50%; background:#4A90D9; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(74,144,217,0.35);">1</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Understand</div>
-      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">Your real problem</div>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:40px; height:40px; border-radius:50%; background:#E8912D; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(232,145,45,0.35);">2</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Organise</div>
-      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">Your people, tools and process</div>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:40px; height:40px; border-radius:50%; background:#8B5FBF; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(139,95,191,0.35);">3</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Automate</div>
-      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">The repetitive work</div>
-    </div>
-    <div style="text-align:center;">
-      <div style="width:40px; height:40px; border-radius:50%; background:#588C00; color:#FFFFFF; font-family:'Poppins',sans-serif; font-weight:700; font-size:15px; display:flex; align-items:center; justify-content:center; margin:0 auto 14px auto; box-shadow:0 8px 16px rgba(88,140,0,0.35);">4</div>
-      <div style="font-family:'Poppins',sans-serif; font-weight:600; font-size:14.5px; color:#141414; margin-bottom:4px;">Hand Over</div>
-      <div style="font-family:'Inter',sans-serif; font-size:12.5px; color:#8B8F86;">To your team</div>
-    </div>
-  </div>
-</div>
-<div style="margin-top:36px; padding-top:28px; border-top:1px solid #EFEBDD;">
-<div style="font-family:'Inter',sans-serif; font-size:13px; font-weight:700; color:#3A3D36; margin-bottom:14px;">And we work inside the tools your team already uses, so there is nothing new to learn.</div>
-<div style="display:flex; flex-wrap:wrap; gap:10px;">
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#3DAA57; box-shadow:0 8px 16px rgba(61,170,87,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">WhatsApp</span></div>
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#1D6F42; box-shadow:0 8px 16px rgba(29,111,66,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path><path d="M9 3v18"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Excel</span></div>
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#4A90D9; box-shadow:0 8px 16px rgba(74,144,217,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 6l10 7 10-7"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Email</span></div>
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#E8912D; box-shadow:0 8px 16px rgba(232,145,45,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"></rect><path d="M8 6h8"></path><path d="M8 10h2"></path><path d="M14 10h2"></path><path d="M8 14h2"></path><path d="M14 14h2"></path><path d="M8 18h2"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Tally</span></div>
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#8B5FBF; box-shadow:0 8px 16px rgba(139,95,191,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Cloud Docs</span></div>
-<div class="card" style="padding:9px 16px 9px 10px; display:flex; align-items:center; gap:12px;"><div style="width:36px; height:36px; border-radius:10px; background:#D9455A; box-shadow:0 8px 16px rgba(217,69,90,0.38); display:flex; align-items:center; justify-content:center; flex-shrink:0;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><path d="M12 8v8"></path><path d="M8 12h8"></path></svg></div><span style="font-family:'Inter',sans-serif; font-size:13.5px; font-weight:600; color:#141414;">Other Tools</span></div>
-</div>
 </div>
 </section>
 
@@ -842,6 +801,9 @@ body.direct .stage{margin-top:6px}
 <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Your Name</div>
 <input id="cname" autocomplete="name" placeholder="Your name" style="width:100%; box-sizing:border-box; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; font-family:'Inter',sans-serif; font-size:14px; margin-bottom:16px; color:#141414;">
 
+<div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">Phone / WhatsApp Number</div>
+<div style="display:flex; gap:8px; margin-bottom:16px;"><select id="ccode" aria-label="Country code" style="font-family:'Inter',sans-serif; font-size:14px; color:#141414; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; box-sizing:border-box; width:104px; flex:none; background:#FFFFFF;"><option value="91">+91 IN</option><option value="1">+1 US/CA</option><option value="44">+44 UK</option><option value="971">+971 AE</option><option value="65">+65 SG</option><option value="61">+61 AU</option><option value="966">+966 SA</option><option value="974">+974 QA</option><option value="968">+968 OM</option><option value="965">+965 KW</option><option value="977">+977 NP</option><option value="94">+94 LK</option><option value="880">+880 BD</option><option value="27">+27 ZA</option><option value="254">+254 KE</option></select><input id="cph" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="Mobile number" style="font-family:'Inter',sans-serif; font-size:14px; color:#141414; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; box-sizing:border-box; flex:1; min-width:0;"></div>
+
 <div style="font-family:'Inter',sans-serif; font-size:11px; font-weight:700; color:#588C00; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">What's happening manually right now?</div>
 <textarea id="cmsg" placeholder="e.g. Every order gets typed into Excel by hand before production can start." rows="4" style="width:100%; box-sizing:border-box; padding:12px 14px; border:1px solid #E7E4DB; border-radius:10px; font-family:'Inter',sans-serif; font-size:14px; margin-bottom:20px; resize:vertical; color:#141414;"></textarea>
 
@@ -867,13 +829,10 @@ body.direct .stage{margin-top:6px}
 <div><span style="color:#588C00; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:1px;">Web</span><br><a href="https://www.linkedin.com/in/ankitaa-s-goyal" style="color:#141414;">linkedin.com/in/ankitaa-s-goyal</a></div>
 </div>
 </div>
-<div style="text-align:center; flex-shrink:0;">
-<img src="assets/whatsapp-qr.png" alt="Scan to chat on WhatsApp" style="width:120px; height:120px; border-radius:14px; border:1px solid #E7E4DB; background:#FFFFFF;">
-</div>
 </div>
 <div style="border-top:1px solid #EFEDE5; padding:24px 0; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
 <img src="assets/ai4work-logo.png" alt="ai4work" style="height:20px; width:auto;">
-<div style="font-family:'Inter',sans-serif; font-size:12px; color:#8B8F86;">Business Process Organisation &amp; Automation</div>
+<div style="font-family:'Inter',sans-serif; font-size:12px; color:#8B8F86;">Process Organisation &amp; Automation</div>
 </div>
 </section>
 
@@ -882,15 +841,26 @@ body.direct .stage{margin-top:6px}
 <a href="https://wa.me/919662036811?text=Hi" target="_blank" rel="noopener" aria-label="Chat with ai4work on WhatsApp" title="Chat on WhatsApp" style="position:fixed; right:16px; bottom:16px; bottom:max(16px, env(safe-area-inset-bottom)); width:58px; height:58px; border-radius:50%; background:#25D366; box-shadow:0 10px 24px rgba(20,20,20,0.28); display:flex; align-items:center; justify-content:center; z-index:50; -webkit-tap-highlight-color:transparent;"><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><path fill="#FFFFFF" d="M16.04 4C9.4 4 4.02 9.37 4.02 16c0 2.12.55 4.18 1.6 6L4 28l6.16-1.6A12 12 0 0 0 16.04 28C22.67 28 28.05 22.63 28.05 16S22.67 4 16.04 4zm0 21.9c-1.8 0-3.56-.49-5.1-1.4l-.37-.22-3.66.95.98-3.57-.24-.37A9.9 9.9 0 0 1 6.1 16c0-5.46 4.45-9.9 9.94-9.9 5.47 0 9.92 4.44 9.92 9.9s-4.45 9.9-9.92 9.9zm5.44-7.4c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.14-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.62-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.23 1.36.2 1.88.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35z"/></svg></a>
 
 
+<style>.ai4-pill{position:fixed;z-index:60;display:inline-flex;align-items:center;background:#588C00;color:#fff;font:700 13px/1 'Inter',system-ui,sans-serif;padding:11px 16px;border-radius:999px;box-shadow:0 8px 20px rgba(20,20,20,.22);text-decoration:none;opacity:0;pointer-events:none;transform:translateY(8px);transition:opacity .2s,transform .2s}.ai4-pill.on{opacity:1;pointer-events:auto;transform:none}.ai4-pill:hover{background:#3f6b00;color:#fff}</style>
 <script>
 document.addEventListener('DOMContentLoaded',function(){
  var close=function(){var c=document.getElementById('mn');if(c&&c.checked)c.checked=false};
  document.addEventListener('click',function(e){var t=e.target;if(!t||!t.closest)return;if(t.closest('.navlinks a'))setTimeout(close,0);else if(!t.closest('.navbar'))close()},true);
  window.addEventListener('hashchange',close);
+ (function(){var hero=document.querySelector('.hero-sec'),wwd=document.getElementById('what-we-do'),ct=document.getElementById('contact'),rs=document.getElementById('ready-solutions');if(!hero||!wwd||!rs)return;
+  var wa=[].slice.call(document.querySelectorAll('a[href*="wa.me"]')).filter(function(a){return getComputedStyle(a).position==='fixed'})[0];
+  var p=document.createElement('a');p.className='ai4-pill';p.href='#ready-solutions';p.textContent='Ready solutions ↓';document.body.appendChild(p);
+  function place(){var r=wa?wa.getBoundingClientRect():null;p.style.right=r?Math.max(12,window.innerWidth-r.right)+'px':'16px';p.style.bottom=r?(window.innerHeight-r.top+12)+'px':'90px'}
+  function upd(){var h=hero.getBoundingClientRect(),w=wwd.getBoundingClientRect(),c=ct.getBoundingClientRect(),vh=window.innerHeight;
+   var show=h.bottom<0&&!(w.top<vh*0.6&&w.bottom>vh*0.2)&&c.top>vh*0.6;place();p.classList.toggle('on',show)}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  p.addEventListener('click',function(e){e.preventDefault();rs.scrollIntoView({behavior:'smooth',block:'start'})});})();
  var b=document.getElementById('csend');if(!b)return;
  b.addEventListener('click',function(){
-  var n=(document.getElementById('cname').value||'').trim(),m=(document.getElementById('cmsg').value||'').trim();
-  var t='Hi Ankitaa, '+(n?'I am '+n+'. ':'')+(m?'Right now, this is what happens manually in my business: '+m:'I was looking at ai4work.in and would like to talk about my business.');
+  var n=(document.getElementById('cname').value||'').trim(),m=(document.getElementById('cmsg').value||'').trim(),ph=(document.getElementById('cph').value||'').trim();
+  var pe=document.getElementById('cph'),cc=document.getElementById('ccode').value,dg=ph.replace(/\D/g,'');dg=dg.replace(/^0+/,'');if(cc==='91'&&dg.length===12&&dg.indexOf('91')===0)dg=dg.slice(2);
+  if(dg.length<7||dg.length>12){pe.style.borderColor='#D9455A';pe.value='';pe.placeholder='Please enter a valid mobile number';pe.focus();return}
+  var t='Hi Ankitaa, '+(n?'I am '+n+'. ':'')+'You can reach me on +'+cc+' '+dg+'. '+(m?'Right now, this is what happens manually in my business: '+m:'I was looking at ai4work.in and would like to talk about my business.');
   window.open('https://wa.me/919662036811?text='+encodeURIComponent(t),'_blank');
   document.getElementById('cform').style.display='none';document.getElementById('cdone').style.display='block';
   document.getElementById('cthx').textContent=n?', '+n:'';});
@@ -1014,7 +984,7 @@ document.addEventListener('DOMContentLoaded',function(){
  })}
  /* ---------- store home ---------- */
  if(f!=='index')return;
- if(f==='index'){document.addEventListener('DOMContentLoaded',function(){var e=[].slice.call(document.querySelectorAll('.eyebrow')).filter(function(x){return /see it working/i.test(x.textContent)})[0];if(!e)return;var sec=e.closest('section');if(!sec)return;var nx=sec.nextElementSibling;sec.style.display='none';if(nx&&nx.className.indexOf('grid3')>-1)nx.style.display='none'});return}
+ if(f==='index'){document.addEventListener('DOMContentLoaded',function(){var ba=[].slice.call(document.querySelectorAll('body *')).filter(function(x){return /^before/i.test(((x.firstChild&&x.firstChild.nodeValue)||'').trim())})[0];if(ba){var bx=ba.parentElement&&ba.parentElement.parentElement;if(bx&&bx.children.length===3)bx.style.display='none'}var e=[].slice.call(document.querySelectorAll('.eyebrow')).filter(function(x){return /see it working/i.test(x.textContent)})[0];if(!e)return;var sec=e.closest('section');if(!sec)return;var nx=sec.nextElementSibling;sec.style.display='none';if(nx&&nx.className.indexOf('grid3')>-1)nx.style.display='none'});return}
  document.addEventListener('DOMContentLoaded',function(){
   var D=window.__ai4Data||[];
   function grp(t){return D.filter(function(g){return g.t===t})[0]||{kids:[]}}
