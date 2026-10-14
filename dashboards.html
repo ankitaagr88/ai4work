@@ -272,6 +272,20 @@ body.store-on{background:#fff !important}
 .st-li{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid #EEF1E8;text-decoration:none;color:inherit}
 .st-li>i{flex:none;width:44px;height:44px;border-radius:12px;background:#E3F0CC;color:#2f5400;display:flex;align-items:center;justify-content:center;font:700 15px 'Poppins',sans-serif;font-style:normal}
 .st-li b{font:600 14.5px/1.3 'Inter',sans-serif;flex:1;min-width:0}
+.st-hero{padding:30px 18px 84px;min-height:calc(100svh - 64px);box-sizing:border-box;display:flex;flex-direction:column}
+.st-hero small{display:block;font:700 11px 'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#588C00;margin-bottom:8px}
+.st-hero h1{margin:0 0 12px;font:800 29px/1.15 'Poppins',sans-serif;color:#141414;letter-spacing:-.02em}
+.st-hero p{margin:0 0 14px;font-size:15px;line-height:1.55;color:#3F463A}
+.st-hero ul{list-style:none;margin:0 0 18px;padding:0;display:flex;flex-direction:column;gap:9px}
+.st-hero li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.5;color:#2B2E28}
+.st-hero li:before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;border-radius:2px;background:#588C00}
+.st-cta{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.st-cta a{flex:1 1 auto;text-align:center;padding:13px 18px;border-radius:999px;font:700 14.5px 'Inter',sans-serif;text-decoration:none}
+.st-cta .go{background:#588C00;color:#fff}.st-cta .alt{border:1.5px solid #588C00;color:#3f6b00;background:#fff}
+.st-hero .who{font-size:13px;color:#5F675A;border-top:1px solid #E7ECDD;padding-top:12px;margin:0}
+.st-hero .who b{color:#141414;display:block;font-size:15px}.st-hero .who em{display:block;font:700 11px 'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#588C00;font-style:normal;margin-bottom:2px}
+.st-more{margin-top:auto;padding-top:18px;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;font:600 12px 'Inter',sans-serif;color:#588C00}
+.st-more svg{animation:stb 1.6s ease-in-out infinite}@keyframes stb{50%{transform:translateY(4px)}}
 .st-about{margin:4px 18px 14px;padding:20px 18px 18px;border-radius:20px;background:#fff;border:1px solid #DDE6CF}
 .st-about small{display:block;font:700 11px 'Inter',sans-serif;letter-spacing:1px;text-transform:uppercase;color:#588C00;margin-bottom:6px}
 .st-about h2{margin:0 0 10px;font:700 21px/1.25 'Poppins',sans-serif;color:#141414;letter-spacing:-.01em}
@@ -706,6 +720,7 @@ window.addEventListener('hashchange',()=>{const g=(location.hash||'').slice(1);i
  })}
  /* ---------- store home ---------- */
  if(f!=='index')return;
+ if(f==='index'){document.addEventListener('DOMContentLoaded',function(){var e=[].slice.call(document.querySelectorAll('.eyebrow')).filter(function(x){return /see it working/i.test(x.textContent)})[0];if(!e)return;var sec=e.closest('section');if(!sec)return;var nx=sec.nextElementSibling;sec.style.display='none';if(nx&&nx.className.indexOf('grid3')>-1)nx.style.display='none'});return}
  document.addEventListener('DOMContentLoaded',function(){
   var D=window.__ai4Data||[];
   function grp(t){return D.filter(function(g){return g.t===t})[0]||{kids:[]}}
@@ -723,10 +738,8 @@ window.addEventListener('hashchange',()=>{const g=(location.hash||'').slice(1);i
   var ih=ind.map(function(k,i){return '<a class="st-ind" href="'+k.href+'"><i style="background:'+COL[i%COL.length]+'">'+ini(k.t)+'</i><b>'+esc(k.t)+'</b></a>'}).join('');
   var lh=prob.slice(0,6).map(function(k,i){return '<a class="st-li" href="'+k.href+'"><i>'+(i+1)+'</i><b>'+esc(k.t)+'</b>'+CH+'</a>'}).join('');
   function head(t,href,sub){return '<div class="st-h"><h2>'+t+'</h2><a href="'+href+'" aria-label="See all '+t+'">'+CH+'</a></div>'+(sub?'<p class="st-sub">'+sub+'</p>':'')}
-  s.innerHTML='<div class="st-brand"><button class="hmb" type="button" aria-label="Open menu" onclick="window.__ai4Menu&&window.__ai4Menu()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><img src="assets/ai4work-logo.png" alt="ai4work"></div><div class="st-top"><label class="st-search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5F675A" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="stq" type="search" placeholder="Search ai4work" aria-label="Search"><button class="st-av" type="button" id="stm" aria-label="Open menu">a</button></label></div>'
-  +'<div class="st-chips" id="stc"><a class="st-chip on" href="#st-top1">For you</a><a class="st-chip" href="#st-p">Processes</a><a class="st-chip" href="#st-b">Together</a><a class="st-chip" href="#st-i">Industries</a><a class="st-chip" href="#st-r">Problems</a><a class="st-chip" href="#sc">Contact</a></div>'
-  +'<div class="st-res" id="str"></div><div class="st-main" id="st-top1">'
-  +'<div class="st-sec" id="st-about" style="padding-top:0"><div class="st-about"><small>Who we are</small><h2>We make your team’s daily work simple</h2><p>ai4work builds simple web apps for the work your team repeats every day, like following up leads, sending quotes, tracking orders and collecting payments.</p><ul><li>Looks and works like Google Sheets and WhatsApp, so there is nothing new to learn</li><li>Speaks the language your staff are comfortable with. We set up the app in English, Hindi or any other language you need</li><li>You see what is happening, without asking around</li></ul><p class="who"><b>Ankitaa S Goyal</b>, process automation consultant in Surat. 6 years in automation and 5 years in AI.</p></div></div>'
+  s.innerHTML='<div class="st-brand"><button class="hmb" type="button" aria-label="Open menu" onclick="window.__ai4Menu&&window.__ai4Menu()"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button><img src="assets/ai4work-logo.png" alt="ai4work"></div>'
+  +'<div class="st-main" id="st-top1"><section class="st-hero" id="st-about"><small>Process automation, made simple</small><h1>We make your team’s daily work simple</h1><p>ai4work builds simple web apps for the work your team repeats every day, like following up leads, sending quotes, tracking orders and collecting payments.</p><ul><li>Looks and works like Google Sheets and WhatsApp, so there is nothing new to learn</li><li>Speaks the language your staff are comfortable with. We set up the app in English, Hindi or any other language you need</li><li>You see what is happening, without asking around</li></ul><div class="st-cta"><a class="go" href="#st-p">See ready solutions</a><a class="alt" href="#sc">Talk to us</a></div><p class="who"><em>Founder</em><b>Ankitaa S Goyal</b>Process automation consultant in Surat. 6 years in automation and 5 years in AI.</p><a class="st-more" href="#st-p" aria-label="Scroll down"><span>Ready solutions below</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#588C00" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></a></section>'
   +'<div class="st-sec" style="padding-top:4px"><div class="st-row f">'+fh+'</div></div>'
   +'<div class="st-sec" id="st-p">'+head('Processes, pay once','Pricing.html','Your team\u2019s everyday work, as a web app that opens on any phone or computer.')+'<div class="st-row">'+ph+'</div></div>'
   +'<div class="st-sec" id="st-i">'+head('Built for your industry','dashboards.html')+'<div class="st-row i">'+ih+'</div></div>'
@@ -737,18 +750,10 @@ window.addEventListener('hashchange',()=>{const g=(location.hash||'').slice(1);i
   var keep=function(e){if(e===s)return true;var t=e.tagName;if(t==='SCRIPT'||t==='STYLE')return true;if(e.classList.contains('bnav')||e.classList.contains('ai4d')||e.classList.contains('ai4d-scrim'))return true;return getComputedStyle(e).position==='fixed'};
   [].slice.call(document.body.children).forEach(function(e){if(!keep(e))e.style.display='none'});
   document.body.classList.add('store-on');
-  document.getElementById('stm').addEventListener('click',function(){if(window.__ai4Menu)window.__ai4Menu()});
+  [].forEach.call(s.querySelectorAll('.st-cta a,.st-more'),function(a){a.addEventListener('click',function(e){e.preventDefault();var t=document.getElementById(a.getAttribute('href').slice(1));if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY-20,behavior:'smooth'})})});
   /* chips */
   var chips=[].slice.call(s.querySelectorAll('.st-chip'));
   chips.forEach(function(c){c.addEventListener('click',function(e){e.preventDefault();var id=c.getAttribute('href').slice(1),t=document.getElementById(id);chips.forEach(function(x){x.classList.toggle('on',x===c)});if(id==='st-top1')window.scrollTo({top:0,behavior:'smooth'});else if(t)window.scrollTo({top:t.getBoundingClientRect().top+scrollY-120,behavior:'smooth'})})});
-  /* search */
-  var all=[];D.forEach(function(g){if(g.kids)g.kids.forEach(function(k){if(k.kids)k.kids.forEach(function(j){all.push([g.t,j.t,j.href])});else if(!k.ext)all.push([g.t,k.t,k.href])})});
-  P.forEach(function(p){all.push(['Processes',p.n+' (price)',p.f+'.html'])});
-  var q=document.getElementById('stq'),r=document.getElementById('str');
-  q.addEventListener('input',function(){var v=q.value.trim().toLowerCase();s.classList.toggle('q',!!v);if(!v){r.innerHTML='';return}
-   var m=all.filter(function(x){return x[1].toLowerCase().indexOf(v)>-1}).slice(0,30),h='',last='';
-   m.forEach(function(x){if(x[0]!==last){h+='<small>'+x[0]+'</small>';last=x[0]}h+='<a class="st-li" href="'+x[2]+'"><i>'+ini(x[1])+'</i><b>'+esc(x[1])+'</b>'+CH+'</a>'});
-   r.innerHTML=h||'<div class="none">Nothing found for \u201c'+esc(q.value)+'\u201d. Try \u201clead\u201d, \u201cclinic\u201d or \u201cpayment\u201d.</div>'});
   if(location.hash==='#contact'){setTimeout(function(){var t=document.getElementById('sc');if(t)t.scrollIntoView()},50)}
  });
 })();
