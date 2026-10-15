@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ai4work.in/sitemap.xml
